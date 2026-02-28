@@ -1,5 +1,6 @@
 <h1>【非公式】有効加速チェッカー</h1>
-<p>ウマ娘 プリティーダービーにおける、各スキルの「有効加速」としての期待値を可視化・判定する有志作成のシミュレーションツールです。</p><br>
+<p>ウマ娘 プリティーダービーにおける、各スキルの「有効加速」としての期待値を可視化・判定する有志作成のシミュレーションツールです。<br>
+今絶賛アーキテクチャの編集中で、精度カッスいのでどうかv1の方を使ってください。<br><br></p>
 [👉 <a href="https://machikane-gomakitaru.github.io/valid-accel-checker-v4/">ツールを利用する</a>]<br><br>
 
 [📘 <a href="https://github.com/machikane-GOMAkitaru/valid-accel-checker-v4/blob/main/valid_accel_spec_v4-1.pdf">仕様書を見てみる(開発者向け)</a>]<br><br>
