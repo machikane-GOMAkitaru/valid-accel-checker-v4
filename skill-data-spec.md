@@ -3,14 +3,14 @@
 
   <h2>1. 基本データ構造</h2>
   <p>各スキルは <code>skill_id</code> をキーとしたオブジェクトで管理し、複数の発動条件を持つ場合は <code>patterns</code> 配列に格納します。</p>
-<code>{
+<pre><code>{
   "skill_id": 100001,
   "skill_name": "スキル名",
   "rarity_value": 3, // 1:ノーマル, 2:金, 6:進化
   "patterns": [ ... ]
-}</code>
+}</code></pre>
 
-<h2>2. filters フィールド（Step 1: 絶対条件）</h2>
+  <h2>2. filters フィールド（Step 1: 絶対条件）</h2>
   <p>「脚質」「距離」「バ場」など、<strong>満たさない場合に「そもそも表示すらしない」条件</strong>をここに構造化データとして記述します。</p>
   <table>
     <thead>
@@ -98,3 +98,4 @@
     <li><strong>pattern_id:</strong> 同じスキル内で条件分岐がある場合、複数の <code>patterns</code> に分けているか？</li>
     <li><strong>ls_point計算:</strong> レース場データ（<code>courses.json</code>）の <code>ls_point</code> は 距離 × 2/3 で小数点以下を処理して格納されているか？</li>
   </ul>
+</html>
