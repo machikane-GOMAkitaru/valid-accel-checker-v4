@@ -323,9 +323,21 @@ tr.invalid { opacity: .18; }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .app { grid-template-columns: 1fr; padding: 8px; }
-  .lpanel { position: static; max-height: none; }
-  .h-tags { display: none; }
+  .app {
+    grid-template-columns: 1fr;
+    padding: 8px;
+    overflow-x: hidden; /* 追加: 画面全体が横スクロールするのを防ぐ安全策 */
+  }
+  .lpanel {
+    position: static;
+    max-height: none;
+  }
+  .h-tags {
+    display: none;
+  }
+  .rpanel {
+    min-width: 0;
+  }
 }
 </style>
 </head>
