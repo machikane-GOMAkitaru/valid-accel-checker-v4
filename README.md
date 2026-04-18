@@ -2,10 +2,7 @@
 <p>ウマ娘 プリティーダービーにおける、各スキルの「有効加速」としての期待値を可視化・判定する有志作成のシミュレーションツールです。<br>
 今絶賛アーキテクチャの編集中で、精度カッスいのでどうかv1の方を使ってください。<br><br></p>
 [👉 <a href="https://machikane-gomakitaru.github.io/valid-accel-checker-v4/">ツールを利用する</a>]<br><br>
-
-[📘 <a href="https://github.com/machikane-GOMAkitaru/valid-accel-checker-v4/blob/main/valid_accel_spec_v4-1.pdf">仕様書を見てみる(開発者向け)</a>]<br><br>
-
-[💬 <a href="https://github.com/machikane-GOMAkitaru/valid-accel-checker-v1/issues/1">不具合報告・お喜びの声の受付</a>]
+[💬 <a href="https://github.com/machikane-GOMAkitaru/valid-accel-checker-v1/issues/1">不具合報告・お喜びの声の受付</a>]<br>
 
 
 2026/2/28　単一HTMLファイルの形式から外部jsファイルを読みに行く形式へ変更<br>
@@ -19,7 +16,7 @@
 <ul>
 <li>情報の正確性：各スキルの判定ロジックには、一部誤りや計算のズレが含まれている可能性があります。</li>
 <li>非公式ツール：本ツールは個人が制作した非公式ファンツールであり、公式の挙動を完全に再現することを保証するものではありません。</li>
-<li>ゲーム内のデータを独自に解析・定義したロジックに基づいて計算しており、実際のゲーム内での挙動を100%保証するものではありません。あらかじめご了承ください。</li>
+<li>ゲーム内のデータを独自に定義したロジックに基づいて計算しており、実際のゲーム内での挙動を100%保証するものではありません。あらかじめご了承ください。</li>
 </ul></p>
 <br>
 
@@ -32,12 +29,7 @@
 </ul>
 <br>などの不具合報告や改善要望がありましたら、ぜひお気軽に下記までお寄せください。<br><br>
 
-連絡先: https://x.com/zeikomi425yen<p><br><br>
-
-<h3>📘 設計仕様について</h3>
-<p>本ツールの判定ロジックや、不確実性スコア（unc）の計算根拠については、以下の仕様書にて公開しています。<br><br>
-[📜 <a href="https://github.com/machikane-GOMAkitaru/valid-accel-checker-v4/blob/main/valid_accel_spec_v4-1.pdf">仕様書を見てみる(開発者向け)</a>]<br>
-※ロジックの改善提案などは、この仕様書に基づいた議論も歓迎します！</p>
+<p>連絡先: https://x.com/zeikomi425yen</p>
 <br><br>
 <h2>⚙️ 主な機能</h2>
 <p><ul>
