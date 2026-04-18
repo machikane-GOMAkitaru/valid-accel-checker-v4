@@ -1,0 +1,2763 @@
+{
+  "races": [
+    {
+      "track_id": 10007,
+      "race_name": "高松宮記念",
+      "track": "中京",
+      "distance": 1200,
+      "ls_point": 800,
+      "sections": {
+        "straights": [
+          [
+            0,
+            380
+          ]
+        ],
+        "corners": [
+          [
+            380,
+            580
+          ]
+        ],
+        "final_corner": [
+          580,
+          790
+        ],
+        "final_straight": [
+          790,
+          1200
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            880,
+            1000
+          ]
+        ],
+        "downhill": [
+          [
+            120,
+            870
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "左",
+        "distance_type": "短距離",
+        "season": "春",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10005,
+      "race_name": "安田記念",
+      "track": "東京",
+      "distance": 1600,
+      "ls_point": 1070,
+      "sections": {
+        "straights": [
+          [
+            0,
+            570
+          ]
+        ],
+        "corners": [
+          [
+            570,
+            830
+          ]
+        ],
+        "final_corner": [
+          830,
+          1080
+        ],
+        "final_straight": [
+          1080,
+          1600
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            320,
+            400
+          ],
+          [
+            1150,
+            1300
+          ]
+        ],
+        "downhill": [
+          [
+            450,
+            710
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "左",
+        "distance_type": "マイル",
+        "season": "春",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10005,
+      "race_name": "NHKマイルカップ",
+      "track": "東京",
+      "distance": 1600,
+      "ls_point": 1070,
+      "sections": {
+        "straights": [
+          [
+            0,
+            570
+          ]
+        ],
+        "corners": [
+          [
+            570,
+            830
+          ]
+        ],
+        "final_corner": [
+          830,
+          1080
+        ],
+        "final_straight": [
+          1080,
+          1600
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            320,
+            400
+          ],
+          [
+            1150,
+            1300
+          ]
+        ],
+        "downhill": [
+          [
+            450,
+            710
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "左",
+        "distance_type": "マイル",
+        "season": "春",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10005,
+      "race_name": "ヴィクトリアマイル",
+      "track": "東京",
+      "distance": 1600,
+      "ls_point": 1070,
+      "sections": {
+        "straights": [
+          [
+            0,
+            570
+          ]
+        ],
+        "corners": [
+          [
+            570,
+            830
+          ]
+        ],
+        "final_corner": [
+          830,
+          1080
+        ],
+        "final_straight": [
+          1080,
+          1600
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            320,
+            400
+          ],
+          [
+            1150,
+            1300
+          ]
+        ],
+        "downhill": [
+          [
+            450,
+            710
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "左",
+        "distance_type": "マイル",
+        "season": "春",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10009,
+      "race_name": "桜花賞",
+      "track": "阪神",
+      "distance": 1600,
+      "ls_point": 1070,
+      "sections": {
+        "straights": [
+          [
+            0,
+            470
+          ]
+        ],
+        "corners": [
+          [
+            470,
+            800
+          ]
+        ],
+        "final_corner": [
+          800,
+          1130
+        ],
+        "final_straight": [
+          1130,
+          1600
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            1400,
+            1510
+          ]
+        ],
+        "downhill": [
+          [
+            1000,
+            1390
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "右",
+        "distance_type": "マイル",
+        "season": "春",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10103,
+      "race_name": "かしわ記念",
+      "track": "船橋",
+      "distance": 1600,
+      "ls_point": 1070,
+      "sections": {
+        "straights": [
+          [
+            0,
+            260
+          ],
+          [
+            600,
+            1000
+          ]
+        ],
+        "corners": [
+          [
+            260,
+            600
+          ],
+          [
+            1000,
+            1120
+          ]
+        ],
+        "final_corner": [
+          1120,
+          1250
+        ],
+        "final_straight": [
+          1250,
+          1600
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "マイル",
+        "season": "春",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10006,
+      "race_name": "皐月賞",
+      "track": "中山",
+      "distance": 2000,
+      "ls_point": 1330,
+      "sections": {
+        "straights": [
+          [
+            0,
+            410
+          ],
+          [
+            870,
+            1210
+          ]
+        ],
+        "corners": [
+          [
+            410,
+            870
+          ],
+          [
+            1210,
+            1470
+          ]
+        ],
+        "final_corner": [
+          1470,
+          1700
+        ],
+        "final_straight": [
+          1700,
+          2000
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            170,
+            270
+          ],
+          [
+            350,
+            550
+          ],
+          [
+            1800,
+            1900
+          ]
+        ],
+        "downhill": [
+          [
+            800,
+            1050
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "右",
+        "distance_type": "中距離",
+        "season": "春",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10009,
+      "race_name": "大阪杯",
+      "track": "阪神",
+      "distance": 2000,
+      "ls_point": 1330,
+      "sections": {
+        "straights": [
+          [
+            0,
+            360
+          ],
+          [
+            700,
+            1070
+          ]
+        ],
+        "corners": [
+          [
+            360,
+            700
+          ],
+          [
+            1070,
+            1370
+          ]
+        ],
+        "final_corner": [
+          1370,
+          1640
+        ],
+        "final_straight": [
+          1640,
+          2000
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            130,
+            250
+          ],
+          [
+            1800,
+            1910
+          ]
+        ],
+        "downhill": [
+          [
+            0,
+            120
+          ],
+          [
+            1200,
+            1790
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "右",
+        "distance_type": "中距離",
+        "season": "春",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10009,
+      "race_name": "宝塚記念",
+      "track": "阪神",
+      "distance": 2200,
+      "ls_point": 1470,
+      "sections": {
+        "straights": [
+          [
+            0,
+            560
+          ],
+          [
+            900,
+            1270
+          ]
+        ],
+        "corners": [
+          [
+            560,
+            900
+          ],
+          [
+            1270,
+            1570
+          ]
+        ],
+        "final_corner": [
+          1570,
+          1840
+        ],
+        "final_straight": [
+          1840,
+          2200
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            300,
+            400
+          ],
+          [
+            2000,
+            2110
+          ]
+        ],
+        "downhill": [
+          [
+            0,
+            290
+          ],
+          [
+            1400,
+            1990
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "右",
+        "distance_type": "中距離",
+        "season": "春",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10005,
+      "race_name": "日本ダービー東京優駿",
+      "track": "東京",
+      "distance": 2400,
+      "ls_point": 1600,
+      "sections": {
+        "straights": [
+          [
+            0,
+            380
+          ],
+          [
+            950,
+            1370
+          ]
+        ],
+        "corners": [
+          [
+            380,
+            950
+          ],
+          [
+            1370,
+            1630
+          ]
+        ],
+        "final_corner": [
+          1630,
+          1900
+        ],
+        "final_straight": [
+          1900,
+          2400
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            0,
+            50
+          ],
+          [
+            1120,
+            1200
+          ],
+          [
+            1950,
+            2100
+          ]
+        ],
+        "downhill": [
+          [
+            1260,
+            1520
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "左",
+        "distance_type": "中距離",
+        "season": "春",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10005,
+      "race_name": "オークス",
+      "track": "東京",
+      "distance": 2400,
+      "ls_point": 1600,
+      "sections": {
+        "straights": [
+          [
+            0,
+            380
+          ],
+          [
+            950,
+            1370
+          ]
+        ],
+        "corners": [
+          [
+            380,
+            950
+          ],
+          [
+            1370,
+            1630
+          ]
+        ],
+        "final_corner": [
+          1630,
+          1900
+        ],
+        "final_straight": [
+          1900,
+          2400
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            0,
+            50
+          ],
+          [
+            1120,
+            1200
+          ],
+          [
+            1950,
+            2100
+          ]
+        ],
+        "downhill": [
+          [
+            1260,
+            1520
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "左",
+        "distance_type": "中距離",
+        "season": "春",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10101,
+      "race_name": "帝王賞",
+      "track": "大井",
+      "distance": 2000,
+      "ls_point": 1330,
+      "sections": {
+        "straights": [
+          [
+            0,
+            500
+          ],
+          [
+            810,
+            1320
+          ]
+        ],
+        "corners": [
+          [
+            500,
+            810
+          ],
+          [
+            1320,
+            1470
+          ]
+        ],
+        "final_corner": [
+          1470,
+          1620
+        ],
+        "final_straight": [
+          1620,
+          2000
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "右",
+        "distance_type": "中距離",
+        "season": "春",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10008,
+      "race_name": "天皇賞春",
+      "track": "京都",
+      "distance": 3200,
+      "ls_point": 2130,
+      "sections": {
+        "straights": [
+          [
+            0,
+            470
+          ],
+          [
+            1000,
+            1400
+          ],
+          [
+            1800,
+            2310
+          ]
+        ],
+        "corners": [
+          [
+            470,
+            1000
+          ],
+          [
+            1400,
+            1800
+          ],
+          [
+            2310,
+            2560
+          ]
+        ],
+        "final_corner": [
+          2560,
+          2800
+        ],
+        "final_straight": [
+          2800,
+          3200
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            200,
+            530
+          ],
+          [
+            2050,
+            2380
+          ]
+        ],
+        "downhill": [
+          [
+            520,
+            680
+          ],
+          [
+            2380,
+            2520
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "右",
+        "distance_type": "長距離",
+        "season": "春",
+        "last_phase_front": true
+      }
+    },
+    {
+      "track_id": 10101,
+      "race_name": "ジャパンダートダービー",
+      "track": "大井",
+      "distance": 2000,
+      "ls_point": 1330,
+      "sections": {
+        "straights": [
+          [
+            0,
+            500
+          ],
+          [
+            810,
+            1320
+          ]
+        ],
+        "corners": [
+          [
+            500,
+            810
+          ],
+          [
+            1320,
+            1470
+          ]
+        ],
+        "final_corner": [
+          1470,
+          1620
+        ],
+        "final_straight": [
+          1620,
+          2000
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "右",
+        "distance_type": "中距離",
+        "season": "夏",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10006,
+      "race_name": "スプリンターズステークス",
+      "track": "中山",
+      "distance": 1200,
+      "ls_point": 800,
+      "sections": {
+        "straights": [
+          [
+            0,
+            280
+          ]
+        ],
+        "corners": [
+          [
+            280,
+            650
+          ]
+        ],
+        "final_corner": [
+          650,
+          900
+        ],
+        "final_straight": [
+          900,
+          1200
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            1020,
+            1130
+          ]
+        ],
+        "downhill": [
+          [
+            0,
+            200
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "右",
+        "distance_type": "短距離",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10101,
+      "race_name": "JBCスプリント",
+      "track": "大井",
+      "distance": 1200,
+      "ls_point": 800,
+      "sections": {
+        "straights": [
+          [
+            0,
+            500
+          ]
+        ],
+        "corners": [
+          [
+            500,
+            670
+          ]
+        ],
+        "final_corner": [
+          670,
+          820
+        ],
+        "final_straight": [
+          820,
+          1200
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "右",
+        "distance_type": "短距離",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10008,
+      "race_name": "マイルチャンピオンシップ",
+      "track": "京都",
+      "distance": 1600,
+      "ls_point": 1070,
+      "sections": {
+        "straights": [
+          [
+            0,
+            710
+          ]
+        ],
+        "corners": [
+          [
+            710,
+            960
+          ]
+        ],
+        "final_corner": [
+          960,
+          1200
+        ],
+        "final_straight": [
+          1200,
+          1600
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            410,
+            780
+          ]
+        ],
+        "downhill": [
+          [
+            790,
+            910
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "右",
+        "distance_type": "マイル",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10104,
+      "race_name": "マイルチャンピオンシップ南部杯",
+      "track": "盛岡",
+      "distance": 1600,
+      "ls_point": 1070,
+      "sections": {
+        "straights": [
+          [
+            0,
+            900
+          ]
+        ],
+        "corners": null,
+        "final_corner": [
+          1070,
+          1250
+        ],
+        "final_straight": [
+          1250,
+          1600
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            500,
+            830
+          ],
+          [
+            1350,
+            1550
+          ]
+        ],
+        "downhill": [
+          [
+            900,
+            1350
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "マイル",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10101,
+      "race_name": "JBCレディスクラシック",
+      "track": "大井",
+      "distance": 1800,
+      "ls_point": 1200,
+      "sections": {
+        "straights": [
+          [
+            0,
+            300
+          ],
+          [
+            610,
+            1120
+          ]
+        ],
+        "corners": [
+          [
+            300,
+            610
+          ],
+          [
+            1120,
+            1270
+          ]
+        ],
+        "final_corner": [
+          1270,
+          1420
+        ],
+        "final_straight": [
+          1420,
+          1800
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "右",
+        "distance_type": "マイル",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10008,
+      "race_name": "秋華賞",
+      "track": "京都",
+      "distance": 2000,
+      "ls_point": 1330,
+      "sections": {
+        "straights": [
+          [
+            0,
+            400
+          ],
+          [
+            800,
+            1200
+          ]
+        ],
+        "corners": [
+          [
+            400,
+            800
+          ],
+          [
+            1200,
+            1440
+          ]
+        ],
+        "final_corner": [
+          1440,
+          1670
+        ],
+        "final_straight": [
+          1670,
+          2000
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            950,
+            1100
+          ]
+        ],
+        "downhill": [
+          [
+            1220,
+            1390
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "右",
+        "distance_type": "中距離",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10005,
+      "race_name": "天皇賞秋",
+      "track": "東京",
+      "distance": 2000,
+      "ls_point": 1330,
+      "sections": {
+        "straights": [
+          [
+            0,
+            210
+          ],
+          [
+            460,
+            970
+          ]
+        ],
+        "corners": [
+          [
+            210,
+            460
+          ],
+          [
+            970,
+            1230
+          ]
+        ],
+        "final_corner": [
+          1230,
+          1500
+        ],
+        "final_straight": [
+          1500,
+          2000
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            720,
+            800
+          ],
+          [
+            1550,
+            1700
+          ]
+        ],
+        "downhill": [
+          [
+            860,
+            1120
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "左",
+        "distance_type": "中距離",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10008,
+      "race_name": "エリザベス女王杯",
+      "track": "京都",
+      "distance": 2200,
+      "ls_point": 1470,
+      "sections": {
+        "straights": [
+          [
+            0,
+            400
+          ],
+          [
+            800,
+            1310
+          ]
+        ],
+        "corners": [
+          [
+            400,
+            800
+          ],
+          [
+            1310,
+            1560
+          ]
+        ],
+        "final_corner": [
+          1560,
+          1800
+        ],
+        "final_straight": [
+          1800,
+          2200
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            1010,
+            1380
+          ]
+        ],
+        "downhill": [
+          [
+            1390,
+            1510
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "右",
+        "distance_type": "中距離",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10005,
+      "race_name": "ジャパンカップ",
+      "track": "東京",
+      "distance": 2400,
+      "ls_point": 1600,
+      "sections": {
+        "straights": [
+          [
+            0,
+            380
+          ],
+          [
+            950,
+            1370
+          ]
+        ],
+        "corners": [
+          [
+            380,
+            950
+          ],
+          [
+            1370,
+            1630
+          ]
+        ],
+        "final_corner": [
+          1630,
+          1900
+        ],
+        "final_straight": [
+          1900,
+          2400
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            0,
+            50
+          ],
+          [
+            1120,
+            1200
+          ],
+          [
+            1950,
+            2100
+          ]
+        ],
+        "downhill": [
+          [
+            1260,
+            1520
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "左",
+        "distance_type": "中距離",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10101,
+      "race_name": "JBCクラシック",
+      "track": "大井",
+      "distance": 2000,
+      "ls_point": 1330,
+      "sections": {
+        "straights": [
+          [
+            0,
+            500
+          ],
+          [
+            810,
+            1320
+          ]
+        ],
+        "corners": [
+          [
+            500,
+            810
+          ],
+          [
+            1320,
+            1470
+          ]
+        ],
+        "final_corner": [
+          1470,
+          1620
+        ],
+        "final_straight": [
+          1620,
+          2000
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "右",
+        "distance_type": "中距離",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10008,
+      "race_name": "菊花賞",
+      "track": "京都",
+      "distance": 3000,
+      "ls_point": 2000,
+      "sections": {
+        "straights": [
+          [
+            0,
+            270
+          ],
+          [
+            800,
+            1200
+          ],
+          [
+            1600,
+            2110
+          ]
+        ],
+        "corners": [
+          [
+            270,
+            800
+          ],
+          [
+            1200,
+            1600
+          ],
+          [
+            2110,
+            2360
+          ]
+        ],
+        "final_corner": [
+          2360,
+          2600
+        ],
+        "final_straight": [
+          2600,
+          3000
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            0,
+            300
+          ],
+          [
+            1810,
+            2180
+          ]
+        ],
+        "downhill": [
+          [
+            310,
+            430
+          ],
+          [
+            2190,
+            2310
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "右",
+        "distance_type": "長距離",
+        "season": "秋",
+        "last_phase_front": true
+      }
+    },
+    {
+      "track_id": 10009,
+      "race_name": "阪神ジュベナイルフィリーズ",
+      "track": "阪神",
+      "distance": 1600,
+      "ls_point": 1070,
+      "sections": {
+        "straights": [
+          [
+            0,
+            470
+          ]
+        ],
+        "corners": [
+          [
+            470,
+            800
+          ]
+        ],
+        "final_corner": [
+          800,
+          1130
+        ],
+        "final_straight": [
+          1130,
+          1600
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            1400,
+            1510
+          ]
+        ],
+        "downhill": [
+          [
+            1000,
+            1390
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "右",
+        "distance_type": "マイル",
+        "season": "冬",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10009,
+      "race_name": "朝日杯フューチュリティステークス",
+      "track": "阪神",
+      "distance": 1600,
+      "ls_point": 1070,
+      "sections": {
+        "straights": [
+          [
+            0,
+            470
+          ]
+        ],
+        "corners": [
+          [
+            470,
+            800
+          ]
+        ],
+        "final_corner": [
+          800,
+          1130
+        ],
+        "final_straight": [
+          1130,
+          1600
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            1400,
+            1510
+          ]
+        ],
+        "downhill": [
+          [
+            1000,
+            1390
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "右",
+        "distance_type": "マイル",
+        "season": "冬",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10005,
+      "race_name": "フェブラリーステークス",
+      "track": "東京",
+      "distance": 1600,
+      "ls_point": 1070,
+      "sections": {
+        "straights": [
+          [
+            0,
+            650
+          ]
+        ],
+        "corners": [
+          [
+            650,
+            870
+          ]
+        ],
+        "final_corner": [
+          870,
+          1100
+        ],
+        "final_straight": [
+          1100,
+          1600
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            1100,
+            1400
+          ]
+        ],
+        "downhill": [
+          [
+            600,
+            800
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "マイル",
+        "season": "冬",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10102,
+      "race_name": "全日本ジュニア優駿",
+      "track": "川崎",
+      "distance": 1600,
+      "ls_point": 1070,
+      "sections": {
+        "straights": [
+          [
+            0,
+            500
+          ],
+          [
+            700,
+            1100
+          ]
+        ],
+        "corners": [
+          [
+            500,
+            700
+          ],
+          [
+            1100,
+            1200
+          ]
+        ],
+        "final_corner": [
+          1200,
+          1300
+        ],
+        "final_straight": [
+          1300,
+          1600
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "マイル",
+        "season": "冬",
+        "last_phase_front": true
+      }
+    },
+    {
+      "track_id": 10007,
+      "race_name": "チャンピオンズカップ",
+      "track": "中京",
+      "distance": 1800,
+      "ls_point": 1200,
+      "sections": {
+        "straights": [
+          [
+            0,
+            300
+          ],
+          [
+            670,
+            1070
+          ]
+        ],
+        "corners": [
+          [
+            300,
+            670
+          ],
+          [
+            1070,
+            1210
+          ]
+        ],
+        "final_corner": [
+          1210,
+          1390
+        ],
+        "final_straight": [
+          1390,
+          1800
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            0,
+            170
+          ],
+          [
+            1410,
+            1580
+          ]
+        ],
+        "downhill": [
+          [
+            830,
+            1400
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "マイル",
+        "season": "冬",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10006,
+      "race_name": "ホープフルステークス",
+      "track": "中山",
+      "distance": 2000,
+      "ls_point": 1330,
+      "sections": {
+        "straights": [
+          [
+            0,
+            410
+          ],
+          [
+            870,
+            1210
+          ]
+        ],
+        "corners": [
+          [
+            410,
+            870
+          ],
+          [
+            1210,
+            1470
+          ]
+        ],
+        "final_corner": [
+          1470,
+          1700
+        ],
+        "final_straight": [
+          1700,
+          2000
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            170,
+            270
+          ],
+          [
+            350,
+            550
+          ],
+          [
+            1800,
+            1900
+          ]
+        ],
+        "downhill": [
+          [
+            800,
+            1050
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "右",
+        "distance_type": "中距離",
+        "season": "冬",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10101,
+      "race_name": "東京大賞典",
+      "track": "大井",
+      "distance": 2000,
+      "ls_point": 1330,
+      "sections": {
+        "straights": [
+          [
+            0,
+            500
+          ],
+          [
+            810,
+            1320
+          ]
+        ],
+        "corners": [
+          [
+            500,
+            810
+          ],
+          [
+            1320,
+            1470
+          ]
+        ],
+        "final_corner": [
+          1470,
+          1620
+        ],
+        "final_straight": [
+          1620,
+          2000
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "右",
+        "distance_type": "中距離",
+        "season": "冬",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10102,
+      "race_name": "川崎記念",
+      "track": "川崎",
+      "distance": 2100,
+      "ls_point": 1400,
+      "sections": {
+        "straights": [
+          [
+            0,
+            400
+          ],
+          [
+            600,
+            1000
+          ],
+          [
+            1200,
+            1600
+          ]
+        ],
+        "corners": [
+          [
+            400,
+            600
+          ],
+          [
+            1000,
+            1200
+          ],
+          [
+            1600,
+            1700
+          ]
+        ],
+        "final_corner": [
+          1700,
+          1800
+        ],
+        "final_straight": [
+          1800,
+          2100
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "中距離",
+        "season": "冬",
+        "last_phase_front": true
+      }
+    },
+    {
+      "track_id": 10006,
+      "race_name": "有馬記念",
+      "track": "中山",
+      "distance": 2500,
+      "ls_point": 1670,
+      "sections": {
+        "straights": [
+          [
+            560,
+            910
+          ],
+          [
+            1370,
+            1710
+          ]
+        ],
+        "corners": [
+          [
+            0,
+            560
+          ],
+          [
+            910,
+            1370
+          ],
+          [
+            1710,
+            1970
+          ]
+        ],
+        "final_corner": [
+          1970,
+          2200
+        ],
+        "final_straight": [
+          2200,
+          2500
+        ]
+      },
+      "hills": {
+        "uphill": [
+          [
+            670,
+            770
+          ],
+          [
+            850,
+            1050
+          ],
+          [
+            2300,
+            2400
+          ]
+        ],
+        "downhill": [
+          [
+            1200,
+            1550
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "右",
+        "distance_type": "長距離",
+        "season": "冬",
+        "last_phase_front": true
+      }
+    },
+    {
+      "track_id": 10202,
+      "race_name": "BCターフスプリント（サ）",
+      "track": "サンタアニタパーク",
+      "distance": 1000,
+      "ls_point": 667,
+      "sections": {
+        "straights": [
+          [
+            0,
+            400
+          ]
+        ],
+        "corners": [
+          [
+            400,
+            550
+          ]
+        ],
+        "final_corner": [
+          550,
+          700
+        ],
+        "final_straight": [
+          550,
+          700
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "左",
+        "distance_type": "短距離",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10202,
+      "race_name": "BCマイル（サ）",
+      "track": "サンタアニタパーク",
+      "distance": 1600,
+      "ls_point": 1067,
+      "sections": {
+        "straights": [
+          [
+            0,
+            300
+          ],
+          [
+            600,
+            1000
+          ]
+        ],
+        "corners": [
+          [
+            300,
+            450
+          ],
+          [
+            450,
+            600
+          ],
+          [
+            1000,
+            1150
+          ]
+        ],
+        "final_corner": [
+          1150,
+          1300
+        ],
+        "final_straight": [
+          1300,
+          1600
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "左",
+        "distance_type": "マイル",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10202,
+      "race_name": "BCフィリー＆メアターフ（サ）",
+      "track": "サンタアニタパーク",
+      "distance": 2000,
+      "ls_point": 1333,
+      "sections": {
+        "straights": [
+          [
+            300,
+            700
+          ],
+          [
+            1000,
+            1400
+          ]
+        ],
+        "corners": [
+          [
+            100,
+            300
+          ],
+          [
+            700,
+            850
+          ],
+          [
+            850,
+            1000
+          ],
+          [
+            1400,
+            1550
+          ]
+        ],
+        "final_corner": [
+          1550,
+          1700
+        ],
+        "final_straight": [
+          1700,
+          2000
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": [
+          [
+            0,
+            150
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "左",
+        "distance_type": "中距離",
+        "season": "秋",
+        "last_phase_front": true
+      }
+    },
+    {
+      "track_id": 10202,
+      "race_name": "BCターフ（サ）",
+      "track": "サンタアニタパーク",
+      "distance": 2400,
+      "ls_point": 1600,
+      "sections": {
+        "straights": [
+          [
+            700,
+            1100
+          ],
+          [
+            1400,
+            1800
+          ]
+        ],
+        "corners": [
+          [
+            200,
+            700
+          ],
+          [
+            1100,
+            1250
+          ],
+          [
+            1250,
+            1400
+          ],
+          [
+            1800,
+            1950
+          ]
+        ],
+        "final_corner": [
+          1950,
+          2100
+        ],
+        "final_straight": [
+          2100,
+          2400
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": [
+          [
+            350,
+            550
+          ]
+        ]
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "左",
+        "distance_type": "中距離",
+        "season": "秋",
+        "last_phase_front": true
+      }
+    },
+    {
+      "track_id": 10202,
+      "race_name": "BCスプリント（サ）",
+      "track": "サンタアニタパーク",
+      "distance": 1200,
+      "ls_point": 800,
+      "sections": {
+        "straights": [
+          [
+            90,
+            500
+          ]
+        ],
+        "corners": [
+          [
+            500,
+            695
+          ]
+        ],
+        "final_corner": [
+          695,
+          890
+        ],
+        "final_straight": [
+          890,
+          1200
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "短距離",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10202,
+      "race_name": "BCフィリー&メアスプリント（サ）",
+      "track": "サンタアニタパーク",
+      "distance": 1400,
+      "ls_point": 933,
+      "sections": {
+        "straights": [
+          [
+            290,
+            700
+          ]
+        ],
+        "corners": [
+          [
+            700,
+            895
+          ]
+        ],
+        "final_corner": [
+          895,
+          1090
+        ],
+        "final_straight": [
+          1090,
+          1400
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "短距離",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10202,
+      "race_name": "BCダートマイル（サ）",
+      "track": "サンタアニタパーク",
+      "distance": 1600,
+      "ls_point": 1067,
+      "sections": {
+        "straights": [
+          [
+            0,
+            150
+          ],
+          [
+            540,
+            950
+          ]
+        ],
+        "corners": [
+          [
+            150,
+            345
+          ],
+          [
+            345,
+            540
+          ],
+          [
+            950,
+            1145
+          ]
+        ],
+        "final_corner": [
+          1145,
+          1340
+        ],
+        "final_straight": [
+          1340,
+          1650
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "マイル",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10202,
+      "race_name": "BCディスタフ（サ）",
+      "track": "サンタアニタパーク",
+      "distance": 1800,
+      "ls_point": 1200,
+      "sections": {
+        "straights": [
+          [
+            0,
+            300
+          ],
+          [
+            690,
+            1100
+          ]
+        ],
+        "corners": [
+          [
+            300,
+            495
+          ],
+          [
+            495,
+            690
+          ],
+          [
+            1100,
+            1295
+          ]
+        ],
+        "final_corner": [
+          1295,
+          1490
+        ],
+        "final_straight": [
+          1490,
+          1800
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "マイル",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10202,
+      "race_name": "BCクラシック（サ）",
+      "track": "サンタアニタパーク",
+      "distance": 2000,
+      "ls_point": 1333,
+      "sections": {
+        "straights": [
+          [
+            90,
+            500
+          ],
+          [
+            890,
+            1300
+          ]
+        ],
+        "corners": [
+          [
+            500,
+            695
+          ],
+          [
+            695,
+            890
+          ],
+          [
+            1300,
+            1495
+          ]
+        ],
+        "final_corner": [
+          1495,
+          1690
+        ],
+        "final_straight": [
+          1690,
+          2000
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "中距離",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10203,
+      "race_name": "BCターフスプリント（デ）",
+      "track": "デルマー",
+      "distance": 1000,
+      "ls_point": 667,
+      "sections": {
+        "straights": [
+          [
+            31,
+            381
+          ]
+        ],
+        "corners": [
+          [
+            381,
+            566
+          ]
+        ],
+        "final_corner": [
+          566,
+          751
+        ],
+        "final_straight": [
+          751,
+          1000
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "左",
+        "distance_type": "短距離",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10203,
+      "race_name": "BCマイル（デ）",
+      "track": "デルマー",
+      "distance": 1600,
+      "ls_point": 1067,
+      "sections": {
+        "straights": [
+          [
+            0,
+            261
+          ],
+          [
+            631,
+            981
+          ]
+        ],
+        "corners": [
+          [
+            261,
+            446
+          ],
+          [
+            446,
+            631
+          ],
+          [
+            981,
+            1166
+          ]
+        ],
+        "final_corner": [
+          1166,
+          1351
+        ],
+        "final_straight": [
+          1351,
+          1600
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "左",
+        "distance_type": "マイル",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10203,
+      "race_name": "BCターフ（デ）",
+      "track": "デルマー",
+      "distance": 2400,
+      "ls_point": 1600,
+      "sections": {
+        "straights": [
+          [
+            0,
+            341
+          ],
+          [
+            711,
+            1061
+          ],
+          [
+            1431,
+            1781
+          ]
+        ],
+        "corners": [
+          [
+            341,
+            526
+          ],
+          [
+            526,
+            711
+          ],
+          [
+            1061,
+            1246
+          ],
+          [
+            1246,
+            1431
+          ],
+          [
+            1781,
+            1966
+          ]
+        ],
+        "final_corner": [
+          1966,
+          2151
+        ],
+        "final_straight": [
+          2151,
+          2400
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "芝",
+        "direction": "左",
+        "distance_type": "中距離",
+        "season": "秋",
+        "last_phase_front": true
+      }
+    },
+    {
+      "track_id": 10203,
+      "race_name": "BCスプリント（デ）",
+      "track": "デルマー",
+      "distance": 1200,
+      "ls_point": 800,
+      "sections": {
+        "straights": [
+          [
+            120,
+            500
+          ]
+        ],
+        "corners": [
+          [
+            500,
+            710
+          ]
+        ],
+        "final_corner": [
+          710,
+          920
+        ],
+        "final_straight": [
+          920,
+          1200
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "短距離",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10203,
+      "race_name": "BCフィリー&メアスプリント（デ）",
+      "track": "デルマー",
+      "distance": 1400,
+      "ls_point": 933,
+      "sections": {
+        "straights": [
+          [
+            320,
+            700
+          ]
+        ],
+        "corners": [
+          [
+            700,
+            910
+          ]
+        ],
+        "final_corner": [
+          910,
+          1120
+        ],
+        "final_straight": [
+          1120,
+          1400
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "短距離",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10203,
+      "race_name": "BCダートマイル（デ）",
+      "track": "デルマー",
+      "distance": 1600,
+      "ls_point": 1067,
+      "sections": {
+        "straights": [
+          [
+            0,
+            160
+          ],
+          [
+            580,
+            960
+          ]
+        ],
+        "corners": [
+          [
+            160,
+            370
+          ],
+          [
+            370,
+            580
+          ],
+          [
+            960,
+            1170
+          ]
+        ],
+        "final_corner": [
+          1170,
+          1380
+        ],
+        "final_straight": [
+          1380,
+          1660
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "マイル",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10203,
+      "race_name": "BCディスタフ（デ）",
+      "track": "デルマー",
+      "distance": 1800,
+      "ls_point": 1200,
+      "sections": {
+        "straights": [
+          [
+            0,
+            300
+          ],
+          [
+            720,
+            1100
+          ]
+        ],
+        "corners": [
+          [
+            300,
+            510
+          ],
+          [
+            510,
+            720
+          ],
+          [
+            1100,
+            1310
+          ]
+        ],
+        "final_corner": [
+          1310,
+          1520
+        ],
+        "final_straight": [
+          1520,
+          1800
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "マイル",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    },
+    {
+      "track_id": 10203,
+      "race_name": "BCクラシック（デ）",
+      "track": "デルマー",
+      "distance": 2000,
+      "ls_point": 1333,
+      "sections": {
+        "straights": [
+          [
+            120,
+            500
+          ],
+          [
+            920,
+            1300
+          ]
+        ],
+        "corners": [
+          [
+            500,
+            710
+          ],
+          [
+            710,
+            920
+          ],
+          [
+            1300,
+            1510
+          ]
+        ],
+        "final_corner": [
+          1510,
+          1720
+        ],
+        "final_straight": [
+          1720,
+          2000
+        ]
+      },
+      "hills": {
+        "uphill": null,
+        "downhill": null
+      },
+      "meta": {
+        "surface": "ダート",
+        "direction": "左",
+        "distance_type": "中距離",
+        "season": "秋",
+        "last_phase_front": false
+      }
+    }
+  ],
+  "meta": {
+    "total": 51,
+    "generated_at": "2026-04-09"
+  }
+}
