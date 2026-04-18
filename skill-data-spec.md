@@ -71,17 +71,34 @@
     </li>
   </ul>
 
-  <h2>4. uncertainty_total と trigger</h2>
-  <ul>
-    <li><strong><code>trigger</code>:</strong> ユーザーへの参考情報として保持します（プログラムの足切りには使いません）。</li>
-    <li><strong><code>uncertainty_total</code>:</strong> <code>trigger</code> の難易度を 0〜100 の数値に集約して記述します。
-      <ul>
-        <li><code>0</code>: 条件なし / 順位条件のみ（安定）</li>
-        <li><code>30-50</code>: 「近くにウマ娘がいる」など展開に左右されるもの</li>
-        <li><code>80-100</code>: 「掛かりなし」「特定の順位で競り合う」など非常に不安定なもの</li>
-      </ul>
-    </li>
-  </ul>
+<h2>4. uncertainty_total の計算ロジック</h2>
+<table>
+    <thead>
+      <tr>
+        <th>CSV上の分類</th>
+        <th>点数</th>
+        <th>該当する内部変数名（例）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="point-box pt1">1点</span> <strong>レース運び条件(弱)</strong></td>
+        <td>+1</td>
+        <td><code>infront_near_lane_time</code>, <code>behind_near_lane_time</code> のみ</td>
+      </tr>
+      <tr>
+        <td><span class="point-box pt3">3点</span> <strong>レース運び条件</strong></td>
+        <td>+3</td>
+        <td><code>is_temptation</code>, <code>near_count</code>, <code>overtake_target</code>, <code>activate_count_any</code> など</td>
+      </tr>
+      <tr>
+        <td><span class="point-box pt5">5点</span> <strong>ランダム条件</strong></td>
+        <td>+5</td>
+        <td>
+          <code>post_number</code>, <code>motivation</code>, <code>is_exist_chara_id / is_exist_skill_id</code>, <code>random_lot</code> のみ        </td>
+      </tr>
+    </tbody>
+  </table>
 
   <h2>5. effect_value（Step 7: ソート用）</h2>
   <p>加速力の増加量を数値（整数）で記述します。</p>
