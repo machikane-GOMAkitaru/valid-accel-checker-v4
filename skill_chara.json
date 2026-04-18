@@ -1,4 +1,4 @@
-const SKILL_CHARA = {"はらぺこ大将":["Special Week"],
+{"はらぺこ大将":["Special Week"],
 "夢叶える末脚":["Special Week"],
 "真夏の思い切り":["Special Week（Summer）"],
 "真夏の総大将":["Special Week（Summer）"],
@@ -873,4 +873,4 @@ const SKILL_CHARA = {"はらぺこ大将":["Special Week"],
 "ペガサスフルパワー！":["Biko Pegasus"],
 "打ち、鍛えて":["Ikuno Dictus"],
 "心、強し！":["Tsurumaru Tsuyoshi"],
-"アピール宣言！":["Royce and Royce"]};
+"アピール宣言！":["Royce and Royce"]}
