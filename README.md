@@ -8,7 +8,8 @@
 [💬 <a href="https://github.com/machikane-GOMAkitaru/valid-accel-checker-v1/issues/1">不具合報告・お喜びの声の受付</a>]
 
 
-2026/2/28　単一HTMLファイルの形式から外部jsファイルを読みに行く形式へ変更
+2026/2/28　単一HTMLファイルの形式から外部jsファイルを読みに行く形式へ変更<br>
+2026/4/18　srcへロジックデータを細切れにして格納・dataへ参照データを格納
 
 
 <br><br>
