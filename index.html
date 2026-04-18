@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>有効加速チェッカー v4.1 | ウマ娘プリティダービー</title>
+<title>有効加速チェッカー_v4 | ウマ娘プリティダービー</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Share+Tech+Mono&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -32,7 +32,7 @@
   --mono:      'Share Tech Mono', monospace;
   --sans:      'Noto Sans JP', sans-serif;
   --disp:      'Zen Kaku Gothic New', sans-serif;
-  --panel:     296px;
+  --panel:     300px;
   --r:         8px;
   --r-sm:      5px;
 }
@@ -45,7 +45,6 @@ body {
   line-height: 1.6;
   min-height: 100vh;
 }
-/* 背景エフェクト */
 body::before {
   content: '';
   position: fixed; inset: 0; pointer-events: none; z-index: 0;
@@ -93,7 +92,7 @@ header {
 .app {
   position: relative; z-index: 1;
   max-width: 1440px; margin: 0 auto;
-  padding: 16px 16px;
+  padding: 16px;
   display: grid;
   grid-template-columns: var(--panel) 1fr;
   gap: 14px;
@@ -136,7 +135,7 @@ label {
 }
 label.req::after { content: ' ✦'; color: var(--gold); font-size: 8px; }
 
-select, input[type=number] {
+select {
   width: 100%;
   background: var(--surface2);
   border: 1px solid var(--border);
@@ -146,11 +145,12 @@ select, input[type=number] {
   outline: none; appearance: none;
   transition: border-color .14s, box-shadow .14s;
 }
-select:focus, input[type=number]:focus {
+select:focus {
   border-color: var(--gold);
   box-shadow: 0 0 0 3px rgba(232,186,74,.08);
 }
-select option { background: var(--surface2); }
+select option, select optgroup { background: var(--surface2); }
+
 .err { font-size: 9.5px; color: var(--red); margin-top: 2px; display: none; }
 .err.show { display: block; }
 .err-ring { border-color: var(--red) !important; }
@@ -169,32 +169,20 @@ select option { background: var(--surface2); }
 .tb:hover { border-color: var(--border2); color: var(--tx2); }
 .tb.on { background: rgba(232,186,74,.1); border-color: var(--gold); color: var(--gold); font-weight: 700; }
 
-/* Slope */
-.slope-wrap {
-  border: 1px solid rgba(232,186,74,.1);
+/* レース情報インフォ */
+.race-info {
+  margin-top: 8px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
   border-radius: var(--r-sm);
-  background: rgba(232,186,74,.02);
-  padding: 9px 10px; margin-top: 2px;
+  padding: 8px 10px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 8px;
+  font-size: 10px;
 }
-.slope-kind { font-size: 10px; color: var(--tx2); margin-bottom: 4px; margin-top: 8px; }
-.slope-kind:first-of-type { margin-top: 0; }
-.srow { display: flex; align-items: center; gap: 3px; margin-bottom: 3px; }
-.srow input { flex: 1; padding: 4px 6px; font-size: 11px; }
-.sep-txt { font-size: 10px; color: var(--tx3); flex-shrink: 0; }
-.rm { background: transparent; border: none; color: var(--tx3); cursor: pointer; font-size: 13px; padding: 0 2px; transition: color .1s; flex-shrink: 0; }
-.rm:hover { color: var(--red); }
-.add {
-  width: 100%; background: transparent;
-  border: 1px dashed rgba(232,186,74,.18);
-  border-radius: 4px; color: rgba(232,186,74,.35);
-  padding: 3px; font-family: var(--sans); font-size: 10px;
-  cursor: pointer; transition: all .12s; margin-top: 2px;
-}
-.add:hover { border-color: var(--gold); color: var(--gold); }
-.hint { font-size: 9.5px; color: var(--tx3); margin-top: 4px; line-height: 1.5; }
-
-.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 8px; }
-.g2 .fg { margin-bottom: 0; }
+.ri-label { color: var(--tx3); }
+.ri-value { color: var(--tx2); font-family: var(--mono); }
 
 /* Buttons */
 .btn-search {
@@ -244,6 +232,7 @@ select option { background: var(--surface2); }
 }
 @keyframes ci { from { opacity:0; transform:scale(.8); } to { opacity:1; transform:scale(1); } }
 
+/* Legend */
 .legend {
   display: flex; gap: 10px; flex-wrap: wrap;
   align-items: center; padding: 7px 12px;
@@ -252,15 +241,6 @@ select option { background: var(--surface2); }
 }
 .li { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
 .ld { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-
-.warn-box {
-  display: none; padding: 7px 12px;
-  background: rgba(232,144,64,.06);
-  border: 1px solid rgba(232,144,64,.2);
-  border-radius: var(--r-sm);
-  font-size: 10px; color: var(--orange); line-height: 1.5;
-}
-.warn-box.show { display: block; }
 
 /* Table */
 .tbl-outer {
@@ -272,7 +252,7 @@ thead tr { background: var(--surface2); border-bottom: 1px solid var(--border2);
 th {
   padding: 8px 12px; text-align: left;
   font-family: var(--mono); font-size: 9px;
-  letter-spacing: 1.5px; color: var(--tx3);
+  letter-spacing: 1.5px; color: var(--tx2);
   white-space: nowrap; font-weight: 400;
 }
 td {
@@ -283,37 +263,96 @@ tr:last-child td { border-bottom: none; }
 tbody tr:hover td { background: rgba(255,255,255,.012); }
 tr.invalid { opacity: .2; }
 .c-name { font-size: 12px; font-weight: 500; color: var(--tx); min-width: 130px; }
-.c-eff { font-size: 11px; color: var(--tx2); max-width: 250px; min-width: 130px; line-height: 1.5; }
+.c-eff  { font-size: 11px; color: var(--tx2); max-width: 250px; min-width: 130px; line-height: 1.5; }
 .c-rank { font-size: 11px; color: var(--tx2); white-space: nowrap; }
 
-/* Badges */
+/* Timing Badges */
 .badge {
   display: inline-flex; align-items: center;
   padding: 3px 8px; border-radius: 4px;
   font-family: var(--mono); font-size: 10px;
   white-space: nowrap; line-height: 1.3;
 }
-.b-fast   { background: rgba(56,224,140,.1);  color: var(--green);  border: 1px solid rgba(56,224,140,.22); }
-.b-semi   { background: rgba(56,196,240,.1);  color: var(--cyan);   border: 1px solid rgba(56,196,240,.22); }
-.b-rand   { background: rgba(158,125,230,.1); color: var(--purple); border: 1px solid rgba(158,125,230,.22); }
-.b-slope  { background: rgba(232,186,74,.1);  color: var(--gold);   border: 1px solid rgba(232,186,74,.22); }
-.b-slopex { background: rgba(232,80,80,.07);  color: #c02828;       border: 1px solid rgba(232,80,80,.18); }
-.b-inv    { background: rgba(36,50,82,.15);   color: var(--tx3);    border: 1px solid var(--border); }
-.b-always { background: rgba(56,224,140,.06);  color: #80ffb0;       border: 1px solid rgba(56,224,140,.18); }
+.b-always { background: rgba(56,224,140,.06);  color: #80ffb0;  border: 1px solid rgba(56,224,140,.18); }
+.b-fast   { background: rgba(56,224,140,.1);   color: var(--green);  border: 1px solid rgba(56,224,140,.22); }
+.b-slope  { background: rgba(232,186,74,.1);   color: var(--gold);   border: 1px solid rgba(232,186,74,.22); }
+.b-semi   { background: rgba(56,196,240,.1);   color: var(--cyan);   border: 1px solid rgba(56,196,240,.22); }
+.b-rand   { background: rgba(158,125,230,.1);  color: var(--purple); border: 1px solid rgba(158,125,230,.22); }
+.b-slopex { background: rgba(232,80,80,.07);   color: #c02828;       border: 1px solid rgba(232,80,80,.18); }
+.b-inv    { background: rgba(36,50,82,.15);    color: var(--tx3);    border: 1px solid var(--border); }
 
 /* Rarity Badges */
 .rar-badge {
   display: inline-flex; align-items: center;
   padding: 2px 7px; border-radius: 4px;
   font-family: var(--mono); font-size: 10px;
-  white-space: nowrap; line-height: 1.3;
-  font-weight: 700;
+  white-space: nowrap; line-height: 1.3; font-weight: 700;
 }
 .rar-w  { background: rgba(180,180,180,.08); color: #a0aabb; border: 1px solid rgba(160,160,160,.2); }
-.rar-g  { background: rgba(245,200,66,.12); color: #f5c842; border: 1px solid rgba(245,200,66,.3); }
+.rar-g  { background: rgba(245,200,66,.12);  color: #f5c842; border: 1px solid rgba(245,200,66,.3); }
 .rar-ub { background: rgba(126,184,247,.12); color: #7eb8f7; border: 1px solid rgba(126,184,247,.3); }
 .rar-u  { background: rgba(200,132,245,.12); color: #c884f5; border: 1px solid rgba(200,132,245,.3); }
-.rar-e  { background: rgba(255,140,66,.14); color: #ff8c42; border: 1px solid rgba(255,140,66,.3); }
+.rar-e  { background: rgba(255,140,66,.14);  color: #ff8c42; border: 1px solid rgba(255,140,66,.3); }
+
+/* Uncertainty Badges */
+.u-zero  { background:rgba(56,224,140,.12); color:#38e08c; border:1px solid rgba(56,224,140,.3); }
+.u-low   { background:rgba(56,196,240,.1);  color:#38c4f0; border:1px solid rgba(56,196,240,.28); }
+.u-mid   { background:rgba(232,186,74,.1);  color:#e8ba4a; border:1px solid rgba(232,186,74,.3); }
+.u-high  { background:rgba(232,144,64,.1);  color:#e89040; border:1px solid rgba(232,144,64,.3); }
+.u-vhigh { background:rgba(232,80,80,.1);   color:#e85050; border:1px solid rgba(232,80,80,.3); }
+.unc-badge {
+  display:inline-flex; align-items:center; gap:4px;
+  padding:3px 8px; border-radius:4px;
+  font-family:var(--mono); font-size:10px; white-space:nowrap; line-height:1.3;
+}
+.unc-score { font-weight:900; font-size:12px; }
+
+/* Rank */
+.rank-cr  { color: var(--cyan);  font-family: var(--mono); font-size: 10px; }
+.rank-lr  { color: var(--gold);  font-family: var(--mono); font-size: 10px; }
+.rank-sep { color: var(--tx3);   font-size: 10px; }
+
+/* Chara */
+.c-chara {
+  font-size: 10px; color: var(--purple); margin-top: 3px;
+  font-style: italic; line-height: 1.4;
+}
+/* Description */
+.c-desc {
+  font-size: 11px; color: var(--tx2); line-height: 1.6;
+  margin-top: 2px; max-width: 280px;
+}
+
+/* Checkbox */
+.chk-label {
+  display: flex; align-items: center; gap: 8px;
+  cursor: pointer; user-select: none;
+  padding: 5px 0;
+}
+.chk-label input[type="checkbox"] { display: none; }
+.chk-box {
+  width: 16px; height: 16px; flex-shrink: 0;
+  border: 1px solid var(--border2);
+  border-radius: 3px; background: var(--surface2);
+  display: flex; align-items: center; justify-content: center;
+  transition: all .12s;
+}
+.chk-label input:checked + .chk-box {
+  background: rgba(232,186,74,.12);
+  border-color: var(--gold);
+}
+.chk-label input:checked + .chk-box::after {
+  content: '✓'; font-size: 11px; color: var(--gold); font-weight: 900; line-height: 1;
+}
+.chk-text { font-size: 12px; color: var(--tx2); }
+
+/* Sort bar */
+.sort-bar {
+  font-family:var(--mono); font-size:9px; color:var(--tx3);
+  padding:5px 14px; border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:6px; flex-wrap:wrap;
+}
+.sort-bar .sbl { color:var(--tx2); }
 
 /* Empty */
 .empty {
@@ -330,42 +369,6 @@ tr.invalid { opacity: .2; }
   .lpanel { position: static; max-height: none; }
   .h-tags { display: none; }
 }
-
-/* ── Uncertainty Badges ── */
-.u-zero { background:rgba(56,224,140,.12); color:#38e08c; border:1px solid rgba(56,224,140,.3); }
-.u-low  { background:rgba(56,196,240,.1);  color:#38c4f0; border:1px solid rgba(56,196,240,.28); }
-.u-mid  { background:rgba(232,186,74,.1);  color:#e8ba4a; border:1px solid rgba(232,186,74,.3); }
-.u-high { background:rgba(232,144,64,.1);  color:#e89040; border:1px solid rgba(232,144,64,.3); }
-.u-vhigh{ background:rgba(232,80,80,.1);   color:#e85050; border:1px solid rgba(232,80,80,.3); }
-.unc-badge {
-  display:inline-flex; align-items:center; gap:4px;
-  padding:3px 8px; border-radius:4px;
-  font-family:var(--mono); font-size:10px; white-space:nowrap; line-height:1.3;
-}
-.unc-score { font-weight:900; font-size:12px; }
-.cond-tags { display:flex; flex-wrap:wrap; gap:2px; margin-top:3px; }
-.cond-tag {
-  font-family:var(--mono); font-size:8px; padding:1px 5px;
-  border-radius:3px; white-space:nowrap;
-}
-.ct-rrw{ background:rgba(220,210,60,.1);  border:1px solid rgba(220,210,60,.25);  color:#c8b820; }
-.ct-rr { background:rgba(232,144,64,.1); border:1px solid rgba(232,144,64,.25); color:#e89040; }
-.ct-rv { background:rgba(232,80,80,.1);  border:1px solid rgba(232,80,80,.25);  color:#e85050; }
-.c-chara {
-  font-size: 10px; color: var(--purple); margin-top: 3px;
-  font-style: italic; line-height: 1.4;
-}
-.rank-cr { color: var(--cyan); font-family: var(--mono); font-size: 10px; }
-.rank-lr { color: var(--gold); font-family: var(--mono); font-size: 10px; }
-.rank-sep { color: var(--tx3); font-size: 10px; }
-
-
-  .sort-bar {font-family:var(--mono); font-size:9px; color:var(--tx3);
-  padding:5px 14px; border-bottom:1px solid var(--border);
-  display:flex; align-items:center; gap:6px; flex-wrap:wrap;
-}
-.sort-bar .sbl { color:var(--tx2); }
-
 </style>
 </head>
 <body>
@@ -378,8 +381,8 @@ tr.invalid { opacity: .2; }
     </div>
     <div class="h-sep"></div>
     <div class="h-tags">
-      <span class="h-tag ht-g">効果コード31 加速スキル</span>
-      <span class="h-tag ht-c">不確実性スコア分析 v4.1</span>
+      <span class="h-tag ht-g">加速スキル</span>
+      <span class="h-tag ht-c">不確実性スコア分析</span>
     </div>
     <div class="h-right">
       <div class="db-badge">DB: <b id="dbCnt">—</b> スキル</div>
@@ -392,838 +395,125 @@ tr.invalid { opacity: .2; }
   <!-- ━━ LEFT PANEL ━━ -->
   <div class="lpanel">
 
+    <!-- レース選択 -->
     <div class="psec">
-      <div class="psec-ttl">レースプリセット</div>
+      <div class="psec-ttl">レース選択</div>
       <div class="fg">
-        <label>レース選択（自動入力）</label>
-        <select id="presetSel" onchange="applyPreset()">
+        <label class="req">レース</label>
+        <select id="raceSel" onchange="onRaceChange()">
           <option value="">― レースを選ぶ ―</option>
         </select>
+        <div class="err" id="e-race">レースを選択してください</div>
+      </div>
+      <!-- レース情報インフォ -->
+      <div class="race-info">
+        <span class="ri-label">距離</span>   <span class="ri-value" id="infoDistance">—</span>
+        <span class="ri-label">バ場</span>   <span class="ri-value" id="infoSurface">—</span>
+        <span class="ri-label">回り</span>   <span class="ri-value" id="infoDirection">—</span>
+        <span class="ri-label">距離区分</span><span class="ri-value" id="infoDistType">—</span>
+        <span class="ri-label">LS地点</span> <span class="ri-value" id="infoLsPoint">—</span>
       </div>
     </div>
 
+    <!-- 必須条件 -->
     <div class="psec">
       <div class="psec-ttl">必須条件</div>
 
       <div class="fg">
-        <label class="req">距離</label>
-        <select id="distSel" onchange="onDistChange()">
-          <option value="">選択してください</option>
-        </select>
-        <div class="err" id="e-dist">距離を選択してください</div>
-      </div>
-
-      <div class="fg">
-        <label class="req">バ場</label>
-        <div class="tbs">
-          <button class="tb" data-g="gt" data-v="1" onclick="tog(this)">芝</button>
-          <button class="tb" data-g="gt" data-v="2" onclick="tog(this)">ダート</button>
-        </div>
-        <div class="err" id="e-gt">バ場を選択してください</div>
-      </div>
-
-      <div class="fg">
         <label class="req">バ場状態</label>
         <div class="tbs">
-          <button class="tb" data-g="gc" data-v="1" onclick="tog(this)">良</button>
-          <button class="tb" data-g="gc" data-v="2" onclick="tog(this)">稍重</button>
-          <button class="tb" data-g="gc" data-v="3" onclick="tog(this)">重</button>
-          <button class="tb" data-g="gc" data-v="4" onclick="tog(this)">不良</button>
+          <button class="tb" data-g="gc" data-v="1" onclick="tog(this,'gc')">良</button>
+          <button class="tb" data-g="gc" data-v="2" onclick="tog(this,'gc')">稍重</button>
+          <button class="tb" data-g="gc" data-v="3" onclick="tog(this,'gc')">重</button>
+          <button class="tb" data-g="gc" data-v="4" onclick="tog(this,'gc')">不良</button>
         </div>
         <div class="err" id="e-gc">バ場状態を選択してください</div>
       </div>
 
       <div class="fg">
-        <label class="req">レース場</label>
-        <select id="venueSel">
-          <option value="">選択してください</option>
-        </select>
-        <div class="err" id="e-venue">レース場を選択してください</div>
-      </div>
-    </div>
-
-    <div class="psec">
-      <div class="psec-ttl">任意条件</div>
-      <div class="fg">
-        <label>コンディション（未選択＝全対応）</label>
+        <label class="req">天候</label>
         <div class="tbs">
-          <button class="tb" data-g="mv" data-v="1" onclick="togMv(this)" style="font-size:10px">絶不調</button>
-          <button class="tb" data-g="mv" data-v="2" onclick="togMv(this)" style="font-size:10px">不調</button>
-          <button class="tb" data-g="mv" data-v="3" onclick="togMv(this)" style="font-size:10px">普通</button>
-          <button class="tb" data-g="mv" data-v="4" onclick="togMv(this)" style="font-size:10px">好調</button>
-          <button class="tb" data-g="mv" data-v="5" onclick="togMv(this)" style="font-size:10px">絶好調</button>
+          <button class="tb" data-g="weather" data-v="1" onclick="tog(this,'weather')">晴</button>
+          <button class="tb" data-g="weather" data-v="2" onclick="tog(this,'weather')">曇</button>
+          <button class="tb" data-g="weather" data-v="3" onclick="tog(this,'weather')">雨</button>
+          <button class="tb" data-g="weather" data-v="4" onclick="tog(this,'weather')">雪</button>
         </div>
+        <div class="err" id="e-weather">天候を選択してください</div>
       </div>
     </div>
 
+    <!-- 脚質（複数選択） -->
     <div class="psec">
-      <div class="psec-ttl">レア度フィルター</div>
+      <div class="psec-ttl">脚質（複数選択可）</div>
       <div class="fg">
-        <label>レア度（未選択＝全て表示）</label>
-        <div class="tbs" style="flex-wrap:wrap">
-          <button class="tb rar-tb" data-rar="1" onclick="togRar(this)" style="font-size:10px;color:#aaa">白</button>
-          <button class="tb rar-tb" data-rar="2" onclick="togRar(this)" style="font-size:10px;color:#f5c842">金</button>
-          <button class="tb rar-tb" data-rar="3" onclick="togRar(this)" style="font-size:10px;color:#7eb8f7">固有下</button>
-          <button class="tb rar-tb" data-rar="4" onclick="togRar(this)" style="font-size:10px;color:#c884f5">固有</button>
-          <button class="tb rar-tb" data-rar="6" onclick="togRar(this)" style="font-size:10px;color:#ff8c42">進化</button>
+        <label>デフォルトはすべて選択済み。脚質指定なしのスキルは常に表示。</label>
+        <div class="tbs">
+          <button class="tb on" data-g="style" data-v="1" onclick="togStyle(this)">逃げ</button>
+          <button class="tb on" data-g="style" data-v="2" onclick="togStyle(this)">先行</button>
+          <button class="tb on" data-g="style" data-v="3" onclick="togStyle(this)">差し</button>
+          <button class="tb on" data-g="style" data-v="4" onclick="togStyle(this)">追い込み</button>
         </div>
       </div>
     </div>
 
+    <!-- 表示オプション -->
     <div class="psec">
-      <div class="psec-ttl">コース詳細</div>
-
-      <div class="g2">
-        <div class="fg">
-          <label>終盤開始 ls (m)</label>
-          <input type="number" id="manLS" placeholder="例:1333" min="0" max="3200">
-        </div>
-        <div class="fg">
-          <label>最終コーナー fc (m)</label>
-          <input type="number" id="manFC" placeholder="例:1230" min="0" max="3200">
-        </div>
-      </div>
-      <div class="fg">
-        <label>最終直線 fs (m)</label>
-        <input type="number" id="manFS" placeholder="例:1500" min="0" max="3200">
-      </div>
-
-      <div class="slope-wrap">
-        <div class="slope-kind">⛰ 上り坂区間</div>
-        <div id="upRows"></div>
-        <button class="add" onclick="addSlope('up')">＋ 区間を追加</button>
-        <div class="slope-kind" style="margin-top:10px">⬇ 下り坂区間</div>
-        <div id="dnRows"></div>
-        <button class="add" onclick="addSlope('dn')">＋ 区間を追加</button>
-      </div>
-      <p class="hint">プリセット選択で自動入力。手動上書き可。</p>
+      <div class="psec-ttl">表示オプション</div>
+      <label class="chk-label">
+        <input type="checkbox" id="chkExcludeAlways" checked>
+        <span class="chk-box"></span>
+        <span class="chk-text">開始時加速を除外する</span>
+      </label>
     </div>
 
+    <!-- 実行ボタン -->
     <div class="psec">
-      <button class="btn-search" onclick="doSearch()">🔍 有効加速を検索</button>
-      <button class="btn-reset" onclick="resetAll()">リセット</button>
+      <button class="btn-search" onclick="doSearch()">🔍 有効スキルを検索</button>
+      <button class="btn-reset"  onclick="resetAll()">リセット</button>
     </div>
 
-  </div>
+  </div><!-- /lpanel -->
 
   <!-- ━━ RIGHT PANEL ━━ -->
   <div class="rpanel">
 
-    <div class="res-hd">
-      <div class="res-num" id="resCnt">—</div>
-      <div>
-        <div class="res-lbl">件の有効加速スキル</div>
-        <div class="res-tot" id="resTot"></div>
+    <!-- 件数 & チップ -->
+    <div>
+      <div class="res-hd">
+        <div class="res-num" id="resCnt">—</div>
+        <div>
+          <div class="res-lbl">件 有効</div>
+          <div class="res-tot" id="resTot"></div>
+        </div>
       </div>
+      <div class="chips" id="chips" style="margin-top:8px"></div>
     </div>
 
-    <div class="chips" id="chips"></div>
-
+    <!-- 凡例 -->
     <div class="legend">
-      <span style="font-family:var(--mono);font-size:8px;letter-spacing:1.5px;color:var(--tx3);margin-right:2px">LEGEND</span>
-      <span class="li"><span class="ld" style="background:var(--green)"></span>最速発動</span>
-      <span class="li"><span class="ld" style="background:var(--cyan)"></span>準速発動</span>
-      <span class="li"><span class="ld" style="background:var(--purple)"></span>ランダム有効</span>
-      <span class="li"><span class="ld" style="background:var(--gold)"></span>坂（有効）</span>
-      <span class="li"><span class="ld" style="background:#c02828"></span>坂（無効）</span>
-      <span class="li"><span class="ld" style="background:#80ffb0"></span>常時有効</span>
-      <span class="li"><span class="ld" style="background:var(--tx3)"></span>無効</span>
-      <span style="margin-left:8px;border-left:1px solid var(--border);padding-left:8px;color:var(--tx3);font-size:9px">不確実性:</span>
-      <span class="li"><span class="ld" style="background:#38e08c"></span>確定(0)</span>
-      <span class="li"><span class="ld" style="background:#38c4f0"></span>低(1)</span>
-      <span class="li"><span class="ld" style="background:#e8ba4a"></span>中(2)</span>
-      <span class="li"><span class="ld" style="background:#e89040"></span>高(3+)</span>
+      <span style="color:var(--tx3);font-family:var(--mono);font-size:9px;letter-spacing:1px">LEGEND</span>
+      <div class="li"><div class="ld" style="background:#80ffb0"></div>レース開始時</div>
+      <div class="li"><div class="ld" style="background:#38e08c"></div>最速発動（LS-50〜LS）</div>
+      <div class="li"><div class="ld" style="background:#e8ba4a"></div>坂（有効）</div>
+      <div class="li"><div class="ld" style="background:#38c4f0"></div>準速発動（LS〜LS+100）</div>
+      <div class="li"><div class="ld" style="background:#9e7de6"></div>ランダム有効</div>
+      <div class="li"><div class="ld" style="background:#384c6a"></div>無効／条件次第</div>
     </div>
 
-    <div class="warn-box" id="warnBox">
-      ⚠ 最終コーナー（fc）または最終直線（fs）が未入力です。
-      該当スキルの判定精度が下がります。プリセット選択またはコース詳細に入力してください。
-    </div>
-
+    <!-- テーブル -->
     <div class="tbl-outer">
       <div id="resBody">
         <div class="empty">
           <div class="empty-icon">🏇</div>
-          <p>
-            <b>距離・バ場・バ場状態・レース場</b>を選択して<br>
-            検索ボタンを押してください<br>
-            <span style="font-size:10px;color:var(--tx3)">プリセットからレースを選ぶと全自動で入力されます</span>
-          </p>
+          <p><b>レース・バ場状態・天候</b>を選択して<br>検索ボタンを押してください</p>
         </div>
       </div>
     </div>
 
-  </div>
-</div>
+  </div><!-- /rpanel -->
 
-<!-- ── Data files ── -->
-<script src="const_RACES.js"></script>
-<script src="const_SKILL_CHARA.js"></script>
-<script src="const_SKILLS.js"></script>
+</div><!-- /app -->
 
-<script>
-/* ────────────────────────────────
-   CONSTANTS
-──────────────────────────────── */
-const DT_LABEL = {1:'短距離',2:'マイル',3:'中距離',4:'長距離'};
-const GT_LABEL = {1:'芝',2:'ダート'};
-const GC_LABEL = {1:'良',2:'稍重',3:'重',4:'不良'};
-const MV_LABEL = {1:'絶不調',2:'不調',3:'普通',4:'好調',5:'絶好調'};
-
-const VENUE_TRACKS = {
-  '東京':[10005],'中山':[10006],'京都':[10008],'阪神':[10009],'中京':[10007],
-  '大井':[10101],'川崎':[10102],'船橋':[10103],'盛岡':[10104],
-  '札幌':[10001],'函館':[10002],'福島':[10003],'新潟':[10004],
-  '小倉':[10010],'佐賀':[10201],
-  'サンタアニタパーク':[10202],'デルマー':[10203]
-};
-const VENUES = ['東京','中山','京都','阪神','中京','大井','川崎','船橋','盛岡'];
-
-function getDistType(d){ return d<=1599?1:d<=1999?2:d<=2499?3:4; }
-
-let uCnt=0, dCnt=0;
-
-/* ────────────────────────────────
-   INIT
-──────────────────────────────── */
-(function init(){
-  document.getElementById('dbCnt').textContent = SKILLS.length;
-
-  // 距離
-  const ds = document.getElementById('distSel');
-  for(let d=1200;d<=3200;d+=100){
-    const o=document.createElement('option');
-    o.value=d; o.textContent=`${d}m（${DT_LABEL[getDistType(d)]}）`;
-    ds.appendChild(o);
-  }
-
-  // 会場
-  const vs = document.getElementById('venueSel');
-  const jra=['東京','中山','京都','阪神','中京'];
-  const chiho=['大井','川崎','船橋','盛岡'];
-  const kaigai=['サンタアニタパーク','デルマー'];
-  function addVG(label, arr){
-    const g=document.createElement('optgroup'); g.label=label;
-    arr.forEach(v=>{ const o=document.createElement('option'); o.value=v; o.textContent=v; g.appendChild(o); });
-    vs.appendChild(g);
-  }
-  addVG('JRA',jra); addVG('地方',chiho); addVG('海外',kaigai);
-
-  // プリセット
-  const ps = document.getElementById('presetSel');
-  const preJRA=[], preChiho=[], preKaigai=[];
-  RACES.forEach((r,i)=>{
-    const isJ = ['東京','中山','京都','阪神','中京'].includes(r.venue);
-    const isK = ['サンタアニタパーク','デルマー'].includes(r.venue);
-    (isJ?preJRA:isK?preKaigai:preChiho).push({r,i});
-  });
-  function addPG(label, arr){
-    const g=document.createElement('optgroup'); g.label=label;
-    arr.forEach(({r,i})=>{
-      const o=document.createElement('option'); o.value=i;
-      o.textContent=`${r.name}（${r.venue} ${r.distance}m/${GT_LABEL[r.gt]}）`;
-      g.appendChild(o);
-    });
-    ps.appendChild(g);
-  }
-  addPG('JRA',preJRA); addPG('地方',preChiho); addPG('海外',preKaigai);
-})();
-
-
-/* ────────────────────────────────
-   UI HELPERS
-──────────────────────────────── */
-let rarFilter = new Set(); // 空=全表示
-function togRar(btn){
-  const v = parseInt(btn.dataset.rar);
-  if(rarFilter.has(v)){ rarFilter.delete(v); btn.classList.remove('on'); }
-  else { rarFilter.add(v); btn.classList.add('on'); }
-}
-
-function tog(btn){
-  document.querySelectorAll(`[data-g="${btn.dataset.g}"]`).forEach(b=>b.classList.remove('on'));
-  btn.classList.add('on');
-}
-let mvVal = null;
-function togMv(btn){
-  const v = parseInt(btn.dataset.v);
-  if(mvVal===v){ btn.classList.remove('on'); mvVal=null; }
-  else {
-    document.querySelectorAll('[data-g="mv"]').forEach(b=>b.classList.remove('on'));
-    btn.classList.add('on'); mvVal=v;
-  }
-}
-function getSel(g){ const b=document.querySelector(`[data-g="${g}"].on`); return b?parseInt(b.dataset.v):null; }
-
-function clearErr(){
-  document.querySelectorAll('.err').forEach(e=>e.classList.remove('show'));
-  document.querySelectorAll('.err-ring').forEach(e=>e.classList.remove('err-ring'));
-}
-function showErr(eid, eid2){
-  document.getElementById(eid).classList.add('show');
-  if(eid2) document.getElementById(eid2).classList.add('err-ring');
-}
-
-/* 坂行 */
-function addSlope(t){ addSlopeRow(t,'',''); }
-function addSlopeRow(t,s,e){
-  const cont=document.getElementById(t==='up'?'upRows':'dnRows');
-  const id=t==='up'?++uCnt:++dCnt;
-  const rid=`${t}_${id}`;
-  const div=document.createElement('div'); div.className='srow'; div.id=`row_${rid}`;
-  div.innerHTML=`<input type="number" id="${rid}_s" value="${s||''}" placeholder="開始m" min="0" max="3200">`
-    +`<span class="sep-txt">〜</span>`
-    +`<input type="number" id="${rid}_e" value="${e||''}" placeholder="終了m" min="0" max="3200">`
-    +`<button class="rm" onclick="this.closest('.srow').remove()" title="削除">✕</button>`;
-  cont.appendChild(div);
-}
-function getSlopes(t){
-  const res=[];
-  document.getElementById(t==='up'?'upRows':'dnRows').querySelectorAll('.srow').forEach(row=>{
-    const ins=row.querySelectorAll('input');
-    const s=parseFloat(ins[0].value), e=parseFloat(ins[1].value);
-    if(!isNaN(s)&&!isNaN(e)&&s<e) res.push([s,e]);
-  });
-  return res;
-}
-
-/* プリセット適用 */
-function applyPreset(){
-  const idx=document.getElementById('presetSel').value;
-  if(idx==='') return;
-  const r=RACES[parseInt(idx)];
-  document.getElementById('distSel').value=r.distance;
-  document.querySelectorAll('[data-g="gt"]').forEach(b=>b.classList.remove('on'));
-  const gb=document.querySelector(`[data-g="gt"][data-v="${r.gt}"]`);
-  if(gb) gb.classList.add('on');
-  document.getElementById('venueSel').value=r.venue;
-  document.getElementById('manLS').value=r.ls;
-  document.getElementById('manFC').value=r.fc;
-  document.getElementById('manFS').value=r.fs;
-  document.getElementById('upRows').innerHTML='';
-  document.getElementById('dnRows').innerHTML='';
-  uCnt=0; dCnt=0;
-  (r.us||[]).forEach(([s,e])=>addSlopeRow('up',s,e));
-  (r.ds||[]).forEach(([s,e])=>addSlopeRow('dn',s,e));
-  clearErr();
-}
-
-/* 距離変更時にlsを自動補完 */
-function onDistChange(){
-  const d=parseInt(document.getElementById('distSel').value)||0;
-  if(!d) return;
-  const ls=document.getElementById('manLS');
-  if(!ls.value) ls.value=Math.floor(d*2/3);
-}
-
-
-/* ────────────────────────────────
-   UNCERTAINTY SCORING
-──────────────────────────────── */
-// レース運び条件(弱)に分類された内部変数
-const RR_WEAK_VARS = new Set([
-  'infront_near_lane_time',
-  'behind_near_lane_time'
-]);
-
-// 固定条件に再分類された内部変数（rrフィールドに含まれていてもスコア加算しない）
-const FIXED_RR_VARS = new Set([
-  'hp_per',
-  'order',
-  'order_rate'
-]);
-
-// 固定条件に再分類された内部変数（rvフィールド側）
-const FIXED_RV_VARS = new Set([
-  'popularity'
-]);
-
-// スキルのuncを新スコアリングで動的計算
-function calcUnc(s) {
-  let score = 0;
-  // ランダム条件 +4（固定条件に再分類されたものは除外）
-  (s.rv || []).forEach(v => {
-    if (!FIXED_RV_VARS.has(v)) score += 4;
-  });
-  // レース運び条件 or (弱) or 固定条件の分類
-  (s.rr || []).forEach(v => {
-    if (FIXED_RR_VARS.has(v)) {
-      score += 0; // 固定条件 ±0
-    } else if (RR_WEAK_VARS.has(v)) {
-      score += 1; // レース運び条件(弱) +1
-    } else {
-      score += 2; // レース運び条件 +2
-    }
-  });
-  return score;
-}
-
-
-
-function judgeOffset(off, label_suffix) {
-  const suf = label_suffix ? ' ' + label_suffix : '';
-  if (off >= -50 && off <= 0) {
-    const lbl = off === 0 ? '最速発動 (ls)' : `最速発動 (${Math.abs(Math.round(off))}m前)`;
-    return {valid:true, cls:'b-fast', label:lbl + suf, pri:0};
-  }
-  if (off > 0 && off <= 100)
-    return {valid:true, cls:'b-semi', label:`準速発動 (+${Math.round(off)}m)` + suf, pri:1};
-  if (off < -50)
-    return {valid:false, cls:'b-inv', label:`無効（早期 ${Math.abs(Math.round(off))}m前）` + suf, pri:90};
-  return {valid:false, cls:'b-inv', label:`無効（遅延 +${Math.round(off)}m）` + suf, pri:91};
-}
-
-function calcSegTiming(tm, rc) {
-  const {ls, fc, fs, distance, us, ds} = rc;
-
-  if (tm.type === 'always')
-    return {valid:true, cls:'b-always', label:'常時有効', pri:2};
-
-  if (tm.type === 'exclude')
-    return null; // excluded segment
-
-  // ── Fixed timing ──
-  if (tm.type === 'fixed') {
-    let fp = null, suffix = '';
-    switch (tm.fixed_point) {
-      case 'ls':
-        fp = ls; break;
-
-      case 'finalcorner':
-        // fires at fc — works whether fc is before or after ls
-        if (fc == null)
-          return {valid:true, cls:'b-rand', label:'コース情報不足（fc未入力）', pri:50};
-        fp = fc;
-        suffix = fc < ls ? '（中盤コーナー）' : '（終盤コーナー）';
-        break;
-
-      case 'finalstraight':
-        if (fs == null)
-          return {valid:true, cls:'b-rand', label:'コース情報不足（fs未入力）', pri:50};
-        fp = fs;
-        break;
-
-      case 'remain':
-        fp = distance - tm.rv;
-        break;
-
-      case 'distance_rate':
-        fp = Math.floor(distance * tm.rv / 100);
-        break;
-
-      // ── NEW: phase>=2 & corner!=0 ──
-      case 'phase2_corner':
-        // fires when horse enters a corner during final phase
-        // if fc >= ls: horse hasn't reached the final corner yet → fires at fc
-        // if fc < ls:  horse is already in the final corner when phase2 starts → fires at ls
-        if (fc == null)
-          return {valid:true, cls:'b-rand', label:'コース情報不足（fc未入力）', pri:50};
-        fp = (fc >= ls) ? fc : ls;
-        suffix = (fc >= ls) ? '（終盤コーナー入口）' : '（ls時点でコーナー中）';
-        break;
-
-      // ── NEW: phase>=2 & corner==0 ──
-      case 'phase2_straight':
-        // fires when horse enters a straight during final phase
-        // if fs >= ls: fires at fs (final straight starts after ls)
-        // if fs < ls:  horse is already in the final straight → fires at ls? Unlikely for acceleration.
-        //              More likely: fires at ls if ls is in a straight
-        if (fs == null)
-          return {valid:true, cls:'b-rand', label:'コース情報不足（fs未入力）', pri:50};
-        fp = (fs >= ls) ? fs : ls;
-        suffix = (fs >= ls) ? '（最終直線入口）' : '（ls時点で直線中）';
-        break;
-
-      // ── NEW: phase>=2 & corner==0 & straight_front_type==2 (向こう正面) ──
-      case 'phase2_front_straight':
-        // 向こう正面 = the far straight (before the final corner)
-        // If ls < fc: final phase starts in the far straight → fires at ls
-        // If ls >= fc: horse passed the far straight already → skill doesn't fire in phase2
-        if (fc == null)
-          return {valid:true, cls:'b-rand', label:'コース情報不足（fc未入力）', pri:50};
-        if (ls < fc) {
-          fp = ls;
-          suffix = '（向こう正面・終盤入口）';
-        } else {
-          // Far straight was traversed in earlier phase
-          return {valid:false, cls:'b-inv', label:'不発（向こう正面が終盤前に通過済）', pri:94};
-        }
-        break;
-
-      // ── NEW: phase>=2 & corner!=0 & is_finalcorner==0 (非最終コーナー) ──
-      case 'phase2_corner_nonfinal':
-        // Fires at first non-final corner in the final phase
-        // Very course-specific — approximate as "random in phase2 corners"
-        return {valid:true, cls:'b-rand', label:'コース依存（終盤の非最終コーナー）', pri:24};
-
-      default:
-        return null;
-    }
-
-    if (fp == null) return null;
-    return judgeOffset(fp - ls, suffix);
-  }
-
-  // ── Slope ──
-  if (tm.type === 'slope_up') {
-    if (!us || !us.length) return {valid:true, cls:'b-rand', label:'⛰ 上り坂（坂区間未入力）', pri:40};
-    const hit = us.some(([s,e]) => ls>=s && ls<=e);
-    return hit
-      ? {valid:true,  cls:'b-slope',  label:'⛰ 上り坂（有効）', pri:10}
-      : {valid:false, cls:'b-slopex', label:'⛰ 上り坂（無効）', pri:92};
-  }
-  if (tm.type === 'slope_down') {
-    if (!ds || !ds.length) return {valid:true, cls:'b-rand', label:'⬇ 下り坂（坂区間未入力）', pri:41};
-    const hit = ds.some(([s,e]) => ls>=s && ls<=e);
-    return hit
-      ? {valid:true,  cls:'b-slope',  label:'⬇ 下り坂（有効）', pri:11}
-      : {valid:false, cls:'b-slopex', label:'⬇ 下り坂（無効）', pri:93};
-  }
-  if (tm.type === 'slope_up_later_half') {
-    if (!us || !us.length) return {valid:true, cls:'b-rand', label:'⛰ 上り坂・後半（未入力）', pri:40};
-    const lsHit = us.some(([s,e]) => ls>=s && ls<=e);
-    if (lsHit) return {valid:true, cls:'b-slope', label:'⛰ 上り坂・後半（有効）', pri:10};
-    const otherHit = us.some(([s,e]) => e>ls);
-    if (otherHit) return {valid:true, cls:'b-rand', label:'⛰ 上り坂・後半（ランダム）', pri:25};
-    return {valid:false, cls:'b-slopex', label:'⛰ 上り坂・後半（無効）', pri:92};
-  }
-
-  // ── Random ──
-  if (tm.type === 'random') {
-    const sub = tm.subtype;
-    const rv = tm.rv;
-
-    if (sub === 'remain_range') {
-      const remainAtLs = distance - ls;
-      if (remainAtLs >= rv)
-        return {valid:true, cls:'b-fast', label:`最速発動 (ls時点残り${Math.round(remainAtLs)}m≥${rv}m)`, pri:0};
-      const fp = distance - rv;
-      const base = judgeOffset(fp - ls);
-      base.label = base.label.replace('発動', `発動 (残り${rv}m条件)`);
-      return base;
-    }
-    if (sub === 'remain_lte') {
-      const fp = distance - rv;
-      const base = judgeOffset(fp - ls);
-      base.label = base.label.replace('発動', `発動 (残り${rv}m以下)`);
-      return base;
-    }
-
-    const MAP = {
-      fq:                   {label:'ランダム有効（終盤前¼）',      pri:20},
-      fh:                   {label:'ランダム有効（終盤前半）',      pri:21},
-      phase2:               {label:'ランダム有効（終盤全般）',      pri:22},
-      finalcorner_random:   {label:'ランダム有効（最終コーナー）',  pri:23},
-      finalcorner_lh:       {label:'ランダム有効（最終コーナー後半）',pri:24},
-      phase_corner:         {label:'ランダム有効（終盤コーナー）',  pri:23},
-      phase_straight:       {label:'ランダム有効（終盤直線）',      pri:24},
-      all_corner:           {label:'ランダム有効（コーナー）',      pri:25},
-      straight_random:      {label:'ランダム有効（直線）',          pri:26},
-      after50:              {label:'ランダム有効（50%以降）',        pri:27},
-      dist_rate_after:      {label:'ランダム有効（後半）',           pri:27},
-      dist_rate_after_rand: {label:'ランダム有効（後半）',           pri:27},
-      lh:                   {label:'ランダム有効（中盤後半）',       pri:29},
-      phase_latter_straight:{label:'ランダム有効（終盤後半直線）',   pri:24},
-      other:                {label:'ランダム有効（その他）',          pri:35},
-    };
-    const info = MAP[sub];
-    if (info) return {valid:true, cls:'b-rand', label:info.label, pri:info.pri};
-    return {valid:true, cls:'b-rand', label:'ランダム有効', pri:36};
-  }
-
-  return {valid:false, cls:'b-inv', label:'判定不能', pri:99};
-}
-
-function calcResult(s, rc) {
-  // Use segs array if available (OR conditions)
-  const segs = s.segs || [s.tm];
-  let best = null;
-  for (const seg of segs) {
-    const res = calcSegTiming(seg, rc);
-    if (res === null) continue; // excluded segment
-    if (best === null || res.pri < best.pri) best = res;
-  }
-  if (!best) return {valid:false, cls:'b-inv', label:'除外スキル', pri:99};
-  return best;
-}
-
-
-/* ────────────────────────────────
-   FILTER
-──────────────────────────────── */
-function matches(s, dist, dt, gt, gc, mv, tids){
-  // exclude タイプは表示しない
-  // segsがある場合、全セグメントがexcludeなら除外
-  if(s.segs && s.segs.length > 0) {
-    const anyNonExcl = s.segs.some(t => t.type !== 'exclude');
-    if(!anyNonExcl) return false;
-  } else if(s.tm && s.tm.type==='exclude') return false;
-  if(s.dt&&s.dt.length&&!s.dt.includes(dt)) return false;
-  if(s.gt&&s.gt.length&&!s.gt.includes(gt)) return false;
-  if(s.gc&&s.gc.length&&!s.gc.includes(gc)) return false;
-  if(mv!==null&&s.mv&&mv<s.mv) return false;
-  if(s.track&&s.track.length&&!s.track.some(t=>tids.includes(t))) return false;
-  if(s.cd_ge!=null&&dist<s.cd_ge) return false;
-  if(s.cd_le!=null&&dist>s.cd_le) return false;
-  if(s.cd_eq&&s.cd_eq.length&&!s.cd_eq.includes(dist)) return false;
-  // レア度フィルター (rar=4と5は同じ「固有」として扱う)
-  if(rarFilter.size>0){
-    const r = s.rar||1;
-    const rNorm = (r === 5) ? 4 : r; // 5→4に正規化
-    if(!rarFilter.has(rNorm)) return false;
-  }
-  return true;
-}
-
-/* ────────────────────────────────
-   ORDER RANK DISPLAY
-──────────────────────────────── */
-function rankDisplay(raw){
-  if(!raw) return {cr:'—',lr:'—'};
-  const segs=(raw||'').split('@');
-  const cr=new Set(), lr=new Set();
-  segs.forEach(seg=>{
-    const le=seg.match(/order_rate<=(\d+)/), ge=seg.match(/order_rate>=(\d+)/);
-    const ltS=seg.match(/order_rate<(\d+)/), gtS=seg.match(/order_rate>(\d+)/);
-    const ord=seg.match(/\border==(\d+)\b/);
-    const ordLe=seg.match(/\border<=(\d+)\b/);
-    if(ord){ cr.add(ord[1]+'位'); lr.add(ord[1]+'位'); }
-    else if(ordLe){ cr.add(`${ordLe[1]}位以内`); lr.add(`${ordLe[1]}位以内`); }
-    else if(le&&ge){
-      const lo=parseInt(ge[1]),hi=parseInt(le[1]);
-      cr.add(`${Math.ceil(lo/100*9)}〜${Math.ceil(hi/100*9)}位`);
-      lr.add(`${Math.ceil(lo/100*12)}〜${Math.ceil(hi/100*12)}位`);
-    } else if(le){
-      const v=parseInt(le[1]);
-      cr.add(`${Math.ceil(v/100*9)}位以内`); lr.add(`${Math.ceil(v/100*12)}位以内`);
-    } else if(ge){
-      const v=parseInt(ge[1]);
-      const c=9-Math.floor(v/100*9), l=12-Math.floor(v/100*12);
-      if(c>0) cr.add(c+'位以降'); if(l>0) lr.add(l+'位以降');
-    } else if(ltS){
-      const v=parseInt(ltS[1]);
-      const cv=Math.ceil((v-1)/100*9), lv=Math.ceil((v-1)/100*12);
-      if(cv>0) cr.add(cv+'位以内'); if(lv>0) lr.add(lv+'位以内');
-    } else if(gtS){
-      const v=parseInt(gtS[1]);
-      const c=9-Math.floor(v/100*9), l=12-Math.floor(v/100*12);
-      if(c>0) cr.add(c+'位以降'); if(l>0) lr.add(l+'位以降');
-    }
-  });
-  return {
-    cr:[...cr].join(' / ')||'—',
-    lr:[...lr].join(' / ')||'—'
-  };
-}
-
-/* ────────────────────────────────
-   SEARCH
-──────────────────────────────── */
-function doSearch(){
-  clearErr();
-  const dist  = parseInt(document.getElementById('distSel').value)||0;
-  const gt    = getSel('gt');
-  const gc    = getSel('gc');
-  const mv    = mvVal;
-  const venue = document.getElementById('venueSel').value;
-
-  let ok=true;
-  if(!dist)  { showErr('e-dist','distSel'); ok=false; }
-  if(!gt)    { showErr('e-gt',null); ok=false; }
-  if(!gc)    { showErr('e-gc',null); ok=false; }
-  if(!venue) { showErr('e-venue','venueSel'); ok=false; }
-  if(!ok) return;
-
-  const dt = getDistType(dist);
-  const tids = VENUE_TRACKS[venue]||[];
-
-  // コース情報
-  const manLS = parseFloat(document.getElementById('manLS').value);
-  const manFC = parseFloat(document.getElementById('manFC').value);
-  const manFS = parseFloat(document.getElementById('manFS').value);
-  const upS   = getSlopes('up');
-  const dnS   = getSlopes('dn');
-
-  const preIdx = document.getElementById('presetSel').value;
-  const raceBase = preIdx!=='' ? RACES[parseInt(preIdx)] : {};
-
-  const rc = {
-    distance: dist,
-    ls: !isNaN(manLS) ? manLS : (raceBase.ls||Math.floor(dist*2/3)),
-    fc: !isNaN(manFC) ? manFC : (raceBase.fc||null),
-    fs: !isNaN(manFS) ? manFS : (raceBase.fs||null),
-    us: upS.length ? upS : (raceBase.us||[]),
-    ds: dnS.length ? dnS : (raceBase.ds||[]),
-    gt, venue, name: raceBase.name||''
-  };
-
-  // フィルタ＋判定
-  const rows=[];
-  SKILLS.forEach(s=>{
-    if(!matches(s,dist,dt,gt,gc,mv,tids)) return;
-    const res=calcResult(s, rc);
-    rows.push({...s, res});
-  });
-
-  // ソート: (1)タイミングpri昇順 (2)不確実性unc昇順 (3)効果量qty降順 (4)スキル名50音順
-  rows.sort((a,b)=>{
-    if(a.res.pri!==b.res.pri) return a.res.pri-b.res.pri;
-    const ua=calcUnc(a), ub=calcUnc(b);
-    if(ua!==ub) return ua-ub;
-    if((b.qty||0)!==(a.qty||0)) return (b.qty||0)-(a.qty||0);
-    return a.n.localeCompare(b.n,'ja');
-  });
-
-  const validCnt=rows.filter(r=>r.res.valid).length;
-  document.getElementById('resCnt').textContent=validCnt;
-  document.getElementById('resTot').textContent=`（全${rows.length}件中）`;
-
-  // チップ
-  const chipsEl=document.getElementById('chips');
-  chipsEl.innerHTML='';
-  const ac=(t)=>{ const d=document.createElement('div'); d.className='chip'; d.textContent=t; chipsEl.appendChild(d); };
-  ac(`${dist}m（${DT_LABEL[dt]}）`);
-  ac(GT_LABEL[gt]);
-  ac(GC_LABEL[gc]);
-  if(mv) ac(MV_LABEL[mv]);
-  ac(`📍${venue}`);
-  if(rc.name) ac(`🏟${rc.name}`);
-  ac(`ls=${rc.ls}m`);
-  if(rc.fc) ac(`fc=${rc.fc}m`);
-  if(rc.fs) ac(`fs=${rc.fs}m`);
-
-  // 警告
-  const needFC=rows.some(r=>r.tm.fixed_point==='finalcorner');
-  const needFS=rows.some(r=>r.tm.fixed_point==='finalstraight'||r.tm.subtype==='finalstraight');
-  const wb=document.getElementById('warnBox');
-  wb.classList.toggle('show',(needFC&&!rc.fc)||(needFS&&!rc.fs));
-
-  render(rows);
-}
-
-function render(rows) {
-  const container = document.getElementById('resBody');
-  if (rows.length === 0) {
-    container.innerHTML = '<div class="no-res">該当するスキルが見つかりませんでした。</div>';
-    return;
-  }
-
-  function uncInfo(unc) {
-    if (unc === 0) return {cls:'u-zero', label:'確定'};
-    if (unc <= 2)  return {cls:'u-low',  label:'低'};
-    if (unc <= 4)  return {cls:'u-mid',  label:'中'};
-    if (unc <= 6)  return {cls:'u-high', label:'高'};
-    return              {cls:'u-vhigh', label:'最高'};
-  }
-
-  const RAR_INFO = {
-    1:{label:'白',cls:'rar-w'},2:{label:'金',cls:'rar-g'},
-    3:{label:'固有下',cls:'rar-ub'},4:{label:'固有',cls:'rar-u'},
-    5:{label:'固有',cls:'rar-u'},6:{label:'進化',cls:'rar-e'},
-  };
-
-  const sortExpl = `<div class="sort-bar">
-    <span class="sbl">✦ ソート：</span>発動タイミング早い順
-    <span style="color:var(--border2)">▶</span> 不確実性スコア昇順
-    <span style="color:var(--border2)">▶</span> 効果量降順
-    &nbsp;&nbsp;
-    <span class="ct-rrw" style="padding:1px 5px;border-radius:3px">黄</span> レース運び条件(弱)（+1）
-    <span class="ct-rr" style="padding:1px 5px;border-radius:3px">橙</span> レース運び条件（+2）
-    <span class="ct-rv" style="padding:1px 5px;border-radius:3px">赤</span> ランダム条件（+4）
-  </div>`;
-
-  let html = sortExpl + '<table><thead><tr>'
-    + '<th>スキル名</th><th>レア度</th><th>効果量</th>'
-    + '<th>効果 / 発動条件</th><th>順位条件<br><span style="font-size:8px;color:var(--tx3)">チャンミ / LoH</span></th><th>タイミング</th><th>不確実性</th>'
-    + '</tr></thead><tbody>';
-
-  rows.forEach(r => {
-    const trCls = r.res.valid ? '' : 'invalid';
-    let accValue = '-';
-    if (r.qty != null) accValue = (r.qty / 10000).toFixed(2);
-    const ri = RAR_INFO[r.rar] || {label:'?', cls:'rar-w'};
-    const unc = calcUnc(r);
-    const ui = uncInfo(unc);
-    const rr = r.rr || [];
-    const rv = r.rv || [];
-
-    let condHtml = '';
-    if (rr.length || rv.length) {
-      let tags = '';
-      rr.forEach(v => {
-        if (FIXED_RR_VARS.has(v)) {
-          // 固定条件はタグ非表示（スコア±0）
-        } else if (RR_WEAK_VARS.has(v)) {
-          tags += `<span class="cond-tag ct-rrw">${v}</span>`;
-        } else {
-          tags += `<span class="cond-tag ct-rr">${v}</span>`;
-        }
-      });
-      rv.forEach(v => { if (!FIXED_RV_VARS.has(v)) tags += `<span class="cond-tag ct-rv">${v}</span>`; });
-      if (tags) condHtml = '<div class="cond-tags">' + tags + '</div>';
-    }
-
-    // キャラクター名表示 (rar 3-6)
-    let charaHtml = '';
-    if (r.rar >= 3) {
-      const charNames = SKILL_CHARA[r.n];
-      if (charNames && charNames.length > 0) {
-        charaHtml = `<div class="c-chara">＜${charNames.join(' / ')}＞</div>`;
-      }
-    }
-
-    // 順位条件表示
-    const rankHasOrder = /\border(?:_rate)?[=<>!]/.test(r.raw || '');
-    let rankHtml = '—';
-    if (rankHasOrder) {
-      const rd = rankDisplay(r.raw);
-      if (rd.cr !== '—' || rd.lr !== '—') {
-        rankHtml = `<span class="rank-cr">${rd.cr}</span><span class="rank-sep"> / </span><span class="rank-lr">${rd.lr}</span>`;
-      }
-    }
-
-    html += `<tr class="${trCls}">
-      <td><div class="c-name">${r.n}</div></td>
-      <td style="text-align:center"><span class="rar-badge ${ri.cls}">${ri.label}</span></td>
-      <td style="text-align:center;font-family:'Share Tech Mono',monospace;color:var(--cyan);font-weight:bold">${accValue}</td>
-      <td><div class="c-eff">${r.e}</div>${charaHtml}</td>
-      <td class="c-rank">${rankHtml}</td>
-      <td><span class="badge ${r.res.cls}">${r.res.label}</span></td>
-      <td>
-        <span class="unc-badge ${ui.cls}"><span class="unc-score">${unc}</span><span>${ui.label}</span></span>
-        ${condHtml}
-      </td>
-    </tr>`;
-  });
-
-  html += '</tbody></table>';
-  container.innerHTML = html;
-}
-
-/* ────────────────────────────────
-   RESET
-──────────────────────────────── */
-function resetAll(){
-  document.getElementById('presetSel').value='';
-  document.getElementById('distSel').value='';
-  document.getElementById('venueSel').value='';
-  ['manLS','manFC','manFS'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('upRows').innerHTML='';
-  document.getElementById('dnRows').innerHTML='';
-  uCnt=0; dCnt=0;
-  mvVal=null;
-  rarFilter = new Set();
-  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('on'));
-  document.getElementById('chips').innerHTML='';
-  document.getElementById('resCnt').textContent='—';
-  document.getElementById('resTot').textContent='';
-  document.getElementById('warnBox').classList.remove('show');
-  clearErr();
-  document.getElementById('resBody').innerHTML=`<div class="empty">
-<div class="empty-icon">🏇</div>
-<p><b>距離・バ場・バ場状態・レース場</b>を選択して<br>検索ボタンを押してください</p>
-</div>`;
-}
-</script>
+<script type="module" src="./src/main.js"></script>
 </body>
 </html>
