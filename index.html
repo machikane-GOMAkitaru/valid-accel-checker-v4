@@ -323,21 +323,9 @@ tr.invalid { opacity: .18; }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .app {
-    grid-template-columns: 1fr;
-    padding: 8px;
-    overflow-x: hidden; /* 追加: 画面全体が横スクロールするのを防ぐ安全策 */
-  }
-  .lpanel {
-    position: static;
-    max-height: none;
-  }
-  .h-tags {
-    display: none;
-  }
-  .rpanel {
-    min-width: 0;
-  }
+  .app { grid-template-columns: 1fr; padding: 8px; }
+  .lpanel { position: static; max-height: none; }
+  .h-tags { display: none; }
 }
 </style>
 </head>
@@ -396,6 +384,15 @@ tr.invalid { opacity: .18; }
       <!-- 自由入力セクション -->
       <div id="secCustom" style="display:none">
         <div class="err" id="e-custom" style="margin-bottom:6px">必須項目を入力してください</div>
+
+        <!-- レース場 -->
+        <div class="fg">
+          <label>レース場 <span style="color:var(--tx3);font-size:9px">（track_id照合に使用・任意）</span></label>
+          <select id="cTrack">
+            <option value="">― 選択しない ―</option>
+          </select>
+          <div class="custom-note">選択するとコース専用スキルが正しく判定されます</div>
+        </div>
 
         <!-- 距離 -->
         <div class="fg">
