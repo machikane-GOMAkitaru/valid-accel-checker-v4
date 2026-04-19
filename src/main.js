@@ -57,6 +57,7 @@ async function loadData() {
   RACES  = racesData.races;
   document.getElementById('dbCnt').textContent = SKILLS.length;
   buildRaceSelect();
+  buildTrackSelect();
 }
 
 // ── レースプリセットセレクト構築 ───────────────────────────
@@ -79,6 +80,26 @@ function buildRaceSelect() {
     });
     sel.appendChild(og);
   });
+}
+
+// ── レース場セレクト構築（自由入力モード用）──────────────
+function buildTrackSelect() {
+  // races.jsonのtrack_id→track名の対応を一意に抽出してセレクトに追加
+  const sel = document.getElementById('cTrack');
+  const seen = new Map();
+  RACES.forEach(r => {
+    if (!seen.has(r.track_id)) seen.set(r.track_id, r.track);
+  });
+  // track_idの昇順で並べる
+  [...seen.entries()]
+    .sort((a, b) => a[0] - b[0])
+    .forEach(([tid, tname]) => {
+      const opt = document.createElement('option');
+      opt.value = tid;
+      opt.dataset.name = tname;
+      opt.textContent = tname;
+      sel.appendChild(opt);
+    });
 }
 
 // ── モード切替 ──────────────────────────────────────────────
@@ -129,10 +150,17 @@ function buildCustomRace() {
   const downhill = customDownSegs.length > 0 ? customDownSegs.map(s => [s.lo, s.hi]) : null;
   const lastPhaseFront = document.getElementById('cFrontStraight').checked;
 
+  // レース場（未選択時はtrack_id=0 → track_id==X フィルターは不一致扱い）
+  const trackSelEl = document.getElementById('cTrack');
+  const trackId    = trackSelEl.value ? parseInt(trackSelEl.value) : 0;
+  const trackName  = trackSelEl.value
+    ? trackSelEl.options[trackSelEl.selectedIndex].dataset.name
+    : 'カスタム';
+
   return {
-    track_id:  0,
-    race_name: `カスタム（${dist}m）`,
-    track:     'カスタム',
+    track_id:  trackId,
+    race_name: `カスタム（${trackName} ${dist}m）`,
+    track:     trackName,
     distance:  dist,
     ls_point,
     sections: {
@@ -380,6 +408,7 @@ function resetAll() {
   ['infoDistance','infoSurface','infoDirection','infoDistType','infoLsPoint']
     .forEach(id => document.getElementById(id).textContent = '—');
 
+  document.getElementById('cTrack').value    = '';
   document.getElementById('cDist').value     = '';
   document.getElementById('cFcStart').value  = '';
   document.getElementById('cFsStart').value  = '';
